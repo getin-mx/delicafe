@@ -10,7 +10,7 @@
         "spec": "2.2.2",
         "type": "version"
       },
-      "/Users/luisalbertocruzamaya/Documents/Develop/delicafe/node_modules"
+      "/Users/lcruz/Documents/Develop/src/delicafe/node_modules"
     ]
   ],
   "_from": "cordova-plugin-statusbar@2.2.2",
@@ -45,7 +45,7 @@
   "_shasum": "9c533426a29bd288e73b1f3a8972ee164450fb6b",
   "_shrinkwrap": null,
   "_spec": "cordova-plugin-statusbar@2.2.2",
-  "_where": "/Users/luisalbertocruzamaya/Documents/Develop/delicafe/node_modules",
+  "_where": "/Users/lcruz/Documents/Develop/src/delicafe/node_modules",
   "author": {
     "name": "Apache Software Foundation"
   },
