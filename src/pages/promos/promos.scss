@@ -1,0 +1,27 @@
+page-promos {
+  ion-card {
+   position: relative;
+   text-align: center;
+ }
+
+ ion-card img {
+   width: 22%;
+ }
+ ion-card-content{
+   position: absolute;
+   top: 25%;
+   width: 100%;
+ }
+
+ ion-row{
+   top: -5%;
+   padding: 5px;
+ }
+ .card-title {
+
+ }
+
+ .card-subtitle {
+
+ }
+}
