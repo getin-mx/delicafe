@@ -1,24 +1,33 @@
 page-promos {
+
+  ion-content{
+    background: #967F71;
+  }
+
   ion-card {
    position: relative;
    text-align: center;
+   background: #fffce6;
  }
 
  ion-card img {
    width: 22%;
  }
+
  ion-card-content{
    position: absolute;
-   top: 25%;
+   top: 5%;
+   margin-left: 25%;
    width: 100%;
  }
 
  ion-row{
    top: 1%;
    padding: 5px;
+   width: 100%;
  }
  .promo-title{
-   color: #6f3f14;
+   color: color($colors, promos);
    font-weight: bold;
    font-family: 'Open Sans', sans-serif;
    font-size: 125%;

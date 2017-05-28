@@ -1,6 +1,23 @@
 page-perfil {
-  .profile{
-    background-image: url("assets/img/perfil/bg_pr.png");
+  ion-card{
+    background-image: url("../../assets/img/perfil/bg_pr.png");
     width: 100%
+  }
+  .visits{
+    border-style: solid;
+    border-color: #967F71;
+    font-weight: bold;
+    color: #967F71;
+    border-radius: 50%;
+    font-size: 25px;
+    width: 10%;
+    margin: 0 auto;
+  }
+
+  .tit{
+    font-weight: bold;
+    color: #967F71;
+    font-size: 20px;
+    margin-top: 3%;
   }
 }

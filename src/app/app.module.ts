@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { GoogleMaps } from '@ionic-native/google-maps';
 
+import { LoginPage } from '../pages/login/login';
 import { SucursalPage } from '../pages/sucursal/sucursal';
 import { PromosPage } from '../pages/promos/promos';
 import { SocialPage } from '../pages/social/social';
@@ -23,6 +24,7 @@ const cloudSettings: CloudSettings = {
 @NgModule({
   declarations: [
     MyApp,
+    LoginPage,
     SucursalPage,
     PromosPage,
     SocialPage,
@@ -37,6 +39,7 @@ const cloudSettings: CloudSettings = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    LoginPage,
     SucursalPage,
     PromosPage,
     SocialPage,
