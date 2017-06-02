@@ -1,0 +1,24 @@
+page-home {
+  .cont{
+    background-image: url("../../assets/img/login/04.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .clTrans{
+    background: rgba(20, 1, 1, 0.88);
+  }
+  .imgCont{
+    align-items: center;
+  }
+  .logo{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .common{
+    margin: 0 auto;
+    height: 100%;
+  }
+  .btn{
+    top: 60%;
+  }
+}

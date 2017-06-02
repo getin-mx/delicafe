@@ -1,56 +1,52 @@
-import { NgModule, ErrorHandler } from '@angular/core';
-import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { BrowserModule } from '@angular/platform-browser';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import { MyApp } from './app.component';
-import { GoogleMaps } from '@ionic-native/google-maps';
-
-import { LoginPage } from '../pages/login/login';
-import { SucursalPage } from '../pages/sucursal/sucursal';
-import { PromosPage } from '../pages/promos/promos';
-import { SocialPage } from '../pages/social/social';
-import { PerfilPage } from '../pages/perfil/perfil';
-import { TabsPage } from '../pages/tabs/tabs';
-
-import { StatusBar } from '@ionic-native/status-bar';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
 
-const cloudSettings: CloudSettings = {
-  'core': {
-    'app_id': '651f4165'
-  }
-};
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+import { BranchOfficePage } from '../pages/branchoffice/branchoffice';
+import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
+import { PromosPage } from '../pages/promos/promos';
+import { SignUpPage } from '../pages/signup/signup';
+import { SocialPage } from '../pages/social/social';
+import { TabsPage } from "../pages/tabs/tabs";
+
 
 @NgModule({
   declarations: [
     MyApp,
+    HomePage,
+    BranchOfficePage,
     LoginPage,
-    SucursalPage,
+    ProfilePage,
     PromosPage,
+    SignUpPage,
     SocialPage,
-    PerfilPage,
     TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    CloudModule.forRoot(cloudSettings)
+    IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    HomePage,
+    BranchOfficePage,
     LoginPage,
-    SucursalPage,
+    ProfilePage,
     PromosPage,
+    SignUpPage,
     SocialPage,
-    PerfilPage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    GoogleMaps,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
