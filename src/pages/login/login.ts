@@ -18,9 +18,6 @@ export class LoginPage {
   }
 
   login(user:string, password:string){
-    console.log(user);
-    console.log(password);
-
     let isValidEmail = this.ValidateEmail(user);
     if (isValidEmail){
       if(user=="demo@getin.mx" && password=="admin01"){

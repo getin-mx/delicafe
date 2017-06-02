@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-import { SebmGoogleMap, SebmGoogleMapMarker } from 'angular2-google-maps/core';
+import { Geolocation } from '@ionic-native/geolocation';
 
 @Component({
   selector: 'page-branchoffice',
@@ -48,7 +48,13 @@ export class BranchOfficePage {
   lat: number = 19.4351039;
   lng: number = -99.1839505;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
+    this.geolocation.getCurrentPosition().then((resp) => {
+      this.lat = resp.coords.latitude
+      this.lng = resp.coords.longitude
+    }).catch((error) => {
+      console.log('Error getting location', error);
+    });
   }
 
 }
