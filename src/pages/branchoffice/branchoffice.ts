@@ -1,23 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the BranchofficePage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 @Component({
   selector: 'page-branchoffice',
   templateUrl: 'branchoffice.html',
 })
 export class BranchOfficePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  lat: number = 51.678418;
+  lng: number = 7.809007;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad BranchofficePage');
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
 }
