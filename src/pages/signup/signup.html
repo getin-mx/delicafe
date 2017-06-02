@@ -1,12 +1,47 @@
+
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="insti">
     <ion-title>Registro</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content>
+<ion-content class="common">
+  <ion-card text-center class="cont common">
 
+    <div class="clTrans common">
+      <div class="imgCont">
+          <img src="assets/img/common/logo.png" class="logo" padding-top>
+      </div>
+      <br><br><br>
+
+      <div class="btnLogin">
+        <div class="userData">
+          <img src="assets/img/login/profile.png" class="row">
+          <ion-input type="text" [(ngModel)]="user" name="user" class="row" [placeholder]="phUser"></ion-input>
+        </div>
+        <div class="userData" padding-top>
+          <img src="assets/img/login/password.png" class="row">
+          <ion-input type="password" [(ngModel)]="password" name="password" class="row" placeholder="Contrase&ntilde;a"></ion-input>
+        </div>
+        <div class="userData" padding-top>
+          <img src="assets/img/login/email.png" class="row">
+          <ion-input type="text" [(ngModel)]="email" name="email" class="row" [placeholder]="phMail"></ion-input>
+        </div>
+      </div>
+
+      <ion-buttons padding-top>
+        <button ion-button color="login" (click)="login(user, password, email)">Login</button>
+      </ion-buttons>
+      <br>
+      <hr>
+      <br>
+
+      <ion-buttons padding-top>
+        <button ion-button color="face" (click)="loginFacebook()"><img src="assets/img/login/faceLogo.png" alt="">Conectar con Facebook</button>
+      </ion-buttons>
+    </div>
+  </ion-card>
 </ion-content>

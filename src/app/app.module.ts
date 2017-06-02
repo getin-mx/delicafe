@@ -16,6 +16,7 @@ import { PromosPage } from '../pages/promos/promos';
 import { SignUpPage } from '../pages/signup/signup';
 import { SocialPage } from '../pages/social/social';
 import { TabsPage } from "../pages/tabs/tabs";
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { TabsPage } from "../pages/tabs/tabs";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation
+    Geolocation,
+    AuthServiceProvider
   ]
 })
 export class AppModule {}

@@ -1,3 +1,35 @@
 page-signup {
+  .cont{
+    background-image: url("../../assets/img/login/06.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .clTrans{
+    background: rgba(20, 1, 1, 0.88);
+  }
+  .imgCont{
+    align-items: center;
+  }
+  .logo{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .common{
+    margin: 0 auto;
+    height: 100%;
+  }
+  .userData img{
+    margin-left: 10%;
+    width: 30px;
+  }
+  ion-input{
+    background: white;
+    width: 75%;
+    margin-top: -30px;
+    margin-left: 20%;
+  }
 
+  .btnLogin{
+    margin-top: 20%;
+  }
 }
