@@ -11,14 +11,37 @@ page-home {
     align-items: center;
   }
   .logo{
-    width: 50%;
+    width: 70%;
+    padding-top: 55%;
     margin: 0 auto;
   }
   .common{
     margin: 0 auto;
     height: 100%;
   }
-  .btn{
-    top: 60%;
+
+  ion-buttons{
+    padding-top: 20%;
+  }
+
+  button{
+    width: 70%;
+    border-radius: 25px;
+  }
+
+  .login{
+    background-image: url('../../assets/img/login/login.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    color: black;
+  }
+
+  .register{
+    background-image: url('../../assets/img/login/signin.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    color: black;
   }
 }
