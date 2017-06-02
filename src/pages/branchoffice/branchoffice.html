@@ -9,6 +9,6 @@
 
 <ion-content>
   <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="14">
-    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    <sebm-google-map-marker [latitude]="coordinate.lat" [longitude]="coordinate.lat" [label]="coordinate.name" *ngFor="let coordinate of coordinates"></sebm-google-map-marker>
   </sebm-google-map>
 </ion-content>
