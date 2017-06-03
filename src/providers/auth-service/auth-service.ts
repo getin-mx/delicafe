@@ -20,9 +20,10 @@ export class AuthServiceProvider {
     if (credentials.email === null || credentials.password === null) {
       return Observable.throw("Please insert credentials");
     } else {
+
       return Observable.create(observer => {
         // At this point make a request to your backend to make a real check!
-        let access = (credentials.password === "pass" && credentials.email === "email");
+        let access = (credentials.password === "admin01" && credentials.email === "demo@getin.mx");
         this.currentUser = new User('Simon', 'saimon@devdactic.com');
         observer.next(access);
         observer.complete();
