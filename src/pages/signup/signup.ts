@@ -1,50 +1,46 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-
-import { TabsPage } from "../tabs/tabs";
+import { NavController, AlertController, IonicPage } from 'ionic-angular';
+import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html',
 })
 export class SignUpPage {
+  createSuccess = false;
+  registerCredentials = { email: '', password: '' };
 
-  user:string;
-  password:string;
-  email:string;
-  phUser:string = "Usuario";
-  phMail:string = "Correo";
+  constructor(private nav: NavController, private auth: AuthServiceProvider, private alertCtrl: AlertController) { }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.user = "";
-    this.password = "";
-    this.email = "";
-  }
-
-  login(user:string, password:string, email:string){
-    let isValidEmail = this.ValidateEmail(user);
-    if (isValidEmail){
-      if(user=="demo@getin.mx" && password=="admin01"){
-        this.navCtrl.push( TabsPage );
+  public register() {
+    this.auth.register(this.registerCredentials).subscribe(success => {
+      if (success) {
+        this.createSuccess = true;
+        this.showPopup("Success", "Account created.");
+      } else {
+        this.showPopup("Error", "Problem creating account.");
       }
-    }else{
-      this.user="";
-      this.phUser = "Ususario incorrecto, intente de nuevo";
-      this.email = "";
-      this.phMail = "Correo invalido, por favor ingrese otro";
-    }
+    },
+      error => {
+        this.showPopup("Error", error);
+      });
   }
 
-  private ValidateEmail( mail:string ) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-      return (true);
-    }
-    return (false)
+  showPopup(title, text) {
+    let alert = this.alertCtrl.create({
+      title: title,
+      subTitle: text,
+      buttons: [
+        {
+          text: 'OK',
+          handler: data => {
+            if (this.createSuccess) {
+              this.nav.popToRoot();
+            }
+          }
+        }
+      ]
+    });
+    alert.present();
   }
-
-  loginFacebook(){
-    
-  }
-
-
 }

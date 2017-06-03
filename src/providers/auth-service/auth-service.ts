@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Http } from '@angular/http';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 export class User {
@@ -15,11 +14,6 @@ export class User {
 
 @Injectable()
 export class AuthServiceProvider {
-
-  constructor(public http: Http) {
-    console.log('Hello AuthServiceProvider Provider');
-  }
-
   currentUser: User;
 
   public login(credentials) {
@@ -59,5 +53,4 @@ export class AuthServiceProvider {
       observer.complete();
     });
   }
-
 }

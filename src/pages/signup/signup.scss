@@ -1,35 +1,57 @@
 page-signup {
-  .cont{
+  .imageBg{
+    background: color($colors, 'instiTrans');
+    width: 100%;
+    margin-top: -10%;
+    padding-top: 20%;
+    height: 110%;;
+  }
+
+  .login-content{
+
     background-image: url("../../assets/img/login/06.png");
     background-repeat: no-repeat;
     background-position: center;
-  }
-  .clTrans{
-    background: rgba(20, 1, 1, 0.88);
-  }
-  .imgCont{
-    align-items: center;
-  }
-  .logo{
-    width: 50%;
-    margin: 0 auto;
-  }
-  .common{
-    margin: 0 auto;
+    width: 100%;
     height: 100%;
   }
-  .userData img{
-    margin-left: 10%;
-    width: 30px;
-  }
-  ion-input{
-    background: white;
-    width: 75%;
-    margin-top: -30px;
-    margin-left: 20%;
-  }
 
-  .btnLogin{
-    margin-top: 20%;
+  .login-content {
+
+    .login-box {
+      padding: 20px 20px 0px 20px;
+      margin-top: 30px;
+    }
+
+    ion-row {
+       align-items: center;
+       text-align: center;
+     }
+
+     ion-item {
+         border-radius: 30px !important;
+         padding-left: 30px !important;
+         font-size: 0.9em;
+         margin-bottom: 10px;
+         border: 1px solid #ffffff;
+         border-bottom: 0px !important;
+         box-shadow: none !important;
+     }
+
+     .signup-col {
+       margin: 0px 16px 0px 16px;
+       padding-bottom: 20px;
+     }
+
+     .item-inner {
+       border-bottom-color: #ffffff !important;
+       box-shadow: none !important;
+     }
+
+     .submit-btn {
+       background: color($colors, 'lgnBtn');
+       border-radius: 30px !important;
+       border: 1px solid #ffffff;
+     }
   }
 }
