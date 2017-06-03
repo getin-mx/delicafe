@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, AlertController, LoadingController, Loading, IonicPage } from 'ionic-angular';
-import { Auth, User } from '@ionic/cloud-angular';
+//import { Auth, User } from '@ionic/cloud-angular';
 
 import { AuthServiceProvider } from '../../providers/auth-service/auth-service';
 
