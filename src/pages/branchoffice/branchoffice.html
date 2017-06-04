@@ -1,12 +1,3 @@
-<ion-header>
-
-  <ion-navbar color="insti">
-    <ion-title>Sucursales</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content>
   <sebm-google-map [latitude]="lat" [longitude]="lng" [zoom]="14">
     <sebm-google-map-marker [latitude]="coordinate.lat" [longitude]="coordinate.lat" [label]="coordinate.name" *ngFor="let coordinate of coordinates"></sebm-google-map-marker>

@@ -1,6 +1,6 @@
 page-home {
   .cont{
-    background-image: url("../../assets/img/login/04.png");
+    background: url("../../assets/img/login/04.png");
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -27,21 +27,5 @@ page-home {
   button{
     width: 70%;
     border-radius: 25px;
-  }
-
-  .login{
-    background-image: url('../../assets/img/login/login.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    color: black;
-  }
-
-  .register{
-    background-image: url('../../assets/img/login/signin.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    color: black;
   }
 }
