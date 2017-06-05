@@ -1,12 +1,10 @@
 <ion-content text-center class="cont common">
   <div class="clTrans common">
     <div class="imgCont">
-        <img src="assets/img/common/logo.png" class="logo">
+        <img src="{{avatar}}" class="logo">
     </div>
-    <br><br><br>
-    <ion-buttons>
-      <button ion-button color="lgnBtn" (click)="goToLogin()" round>Login</button> <br><br>
-      <button ion-button color="regBtn" (click)="goToRegister()" round>Registrate</button>
-    </ion-buttons>
+    <div class="visits" *ngIf="showVisists">
+      
+    </div>
   </div>
 </ion-content>

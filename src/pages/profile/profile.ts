@@ -8,7 +8,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
+  avatar:string;
+  showVisists:boolean = false;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.avatar = 'assets/img/common/logo.png';
   }
 
   ionViewDidLoad() {
