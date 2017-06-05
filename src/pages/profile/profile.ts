@@ -9,10 +9,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ProfilePage {
 
   avatar:string;
-  showVisists:boolean = false;
+  userSucursalInfo: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.avatar = 'assets/img/common/logo.png';
+    this.avatar = 'assets/img/perfil/avatar.png';
+    this.userSucursalInfo = { visits: 0, discounts: 0 };
   }
 
   ionViewDidLoad() {

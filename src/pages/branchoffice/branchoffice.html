@@ -5,7 +5,26 @@
       [longitude]="coordinate.lng"
       [label]="M"
       [title]="coordinate.name"
+      (markerClick)="showMapDetails(i)"
       [iconUrl]="coordinate.icon" *ngFor="let coordinate of coordinates; let i = index" >
     </sebm-google-map-marker>
   </sebm-google-map>
+  <div class="branchInfo" *ngIf="showInfo">
+    <ion-card>
+      <img src="{{branchSelected.uriImage}}"/>
+      <ion-card-content text-left color="promos">
+        <p class="promo-title">
+          {{branchSelected.name}}
+        </p>
+        <ion-row text-left>
+          <ion-col>
+            <button ion-button clear small color="danger" icon-left>
+              <ion-icon name='map'></ion-icon>
+              <a href="http://maps.google.com?q={{branchSelected.lat}},{{branchSelected.lng}}">Como llegar</a>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

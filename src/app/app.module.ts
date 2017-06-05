@@ -17,6 +17,7 @@ import { PromosPage } from '../pages/promos/promos';
 import { SignUpPage } from '../pages/signup/signup';
 import { SocialPage } from '../pages/social/social';
 import { TabsPage } from "../pages/tabs/tabs";
+
 import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 
 const cloudSettings: CloudSettings = {
@@ -62,7 +63,7 @@ const cloudSettings: CloudSettings = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
-    AuthServiceProvider
+    AuthServiceProvider,
   ]
 })
 export class AppModule {}

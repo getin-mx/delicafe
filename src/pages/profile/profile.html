@@ -3,8 +3,23 @@
     <div class="imgCont">
         <img src="{{avatar}}" class="logo">
     </div>
-    <div class="visits" *ngIf="showVisists">
-      
+    <div class="visits">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <div color="insti">
+              <b>{{userSucursalInfo.visits}} <br>
+              <span>Visitas</span></b>
+            </div>
+          </ion-col>
+          <ion-col>
+            <div>
+              <b>{{userSucursalInfo.discounts}} <br>
+              <span>Descuentos</span></b>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </div>
   </div>
 </ion-content>

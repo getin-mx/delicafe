@@ -9,23 +9,28 @@ page-profile {
   }
   .imgCont{
     align-items: center;
+    height: 50%;
   }
   .logo{
     width: 70%;
-    padding-top: 55%;
+    padding-top: 50%;
     margin: 0 auto;
   }
   .common{
     margin: 0 auto;
     height: 100%;
   }
-
-  ion-buttons{
-    padding-top: 20%;
+  .visits{
+    height: 10%;
+    background: color($colors, 'lgnBtn');
+    margin-top: 68%;
   }
 
-  button{
-    width: 70%;
-    border-radius: 25px;
+  div span{
+    font-size: 17px;
+  }
+
+  ion-col div{
+    font-size: 23px;
   }
 }
