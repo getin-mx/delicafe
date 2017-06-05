@@ -1,3 +1,31 @@
 page-profile {
+  .cont{
+    background: url("../../assets/img/login/04.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .clTrans{
+    background: color($colors, 'instiTrans');
+  }
+  .imgCont{
+    align-items: center;
+  }
+  .logo{
+    width: 70%;
+    padding-top: 55%;
+    margin: 0 auto;
+  }
+  .common{
+    margin: 0 auto;
+    height: 100%;
+  }
 
+  ion-buttons{
+    padding-top: 20%;
+  }
+
+  button{
+    width: 70%;
+    border-radius: 25px;
+  }
 }
