@@ -1,72 +1,26 @@
 page-login {
-
-  .imgLogo{
-    width: 150%;
-  }
-
-  .imageBg{
-    background: color($colors, 'instiTrans');
-    width: 100%;
+  img {
     height: 100%;
+    width: 100;
   }
 
-  .login-content{
-
-    background-image: url("../../assets/img/login/06.png");
-    background-repeat: no-repeat;
-    background-position: center;
+  .contenido {
     width: 100%;
-    height: 100%;
+    height: 50%;
+    margin-top: -130%;
   }
 
-  .login-content {
+  .item.item-trns {
+	  border-color: rgba(0, 0, 0, 0);
+	  background-color: rgba(0, 0, 0, 0);
+  }
 
+  img.logo{
+    width: 70%;
+    padding-bottom: 20%;
+  }
 
-
-    .logo-row {
-      padding-top: 50px;
-      padding-bottom: 20px;
-    }
-
-    .login-box {
-      padding: 20px 20px 0px 20px;
-      margin-top: 30px;
-    }
-
-    ion-row {
-       align-items: center;
-       text-align: center;
-     }
-
-     ion-item {
-         border-radius: 30px !important;
-         padding-left: 30px !important;
-         font-size: 0.9em;
-         margin-bottom: 10px;
-         border: 1px solid #ffffff;
-         border-bottom: 0px !important;
-         box-shadow: none !important;
-     }
-
-     .signup-col {
-       margin: 0px 16px 0px 16px;
-       padding-bottom: 20px;
-     }
-
-     .item-inner {
-       border-bottom-color: #ffffff !important;
-       box-shadow: none !important;
-     }
-
-     .submit-btn {
-       background: color($colors, 'lgnBtn');
-       border-radius: 30px !important;
-       border: 1px solid #ffffff;
-     }
-
-     .register-btn {
-       color: #ffffff;
-       font-size: 0.8em;
-     }
+  .button{
+    width: 80%;
   }
 }
