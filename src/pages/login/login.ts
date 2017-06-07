@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage, Loading, LoadingController, AlertController } from 'ionic-angular';
 
-import { Auth, User } from '@ionic/cloud-angular';
-import {SQLite} from "ionic-native";
+import { Auth, User, FacebookAuth } from '@ionic/cloud-angular';
+import { SQLite } from "ionic-native";
 
 import { SignUpPage } from "../signup/signup";
 import { TabsPage } from "../tabs/tabs";
@@ -19,7 +19,9 @@ export class LoginPage {
 
   database: SQLite;
 
-  constructor(private nav: NavController, public auth: Auth, public user: User, private alertCtrl: AlertController, private loadingCtrl: LoadingController) {
+  constructor(private nav: NavController, public auth: Auth, public user: User, private alertCtrl: AlertController,
+     private loadingCtrl: LoadingController, private facebookAuth: FacebookAuth) {
+
     this.credentials = {"email": "", "password": ""};
     this.database = new SQLite();
     this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
