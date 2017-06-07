@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { ProfileInfoInteface } from "../../interfaces/profile-info/profile-info.interface";
+
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -8,12 +10,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ProfilePage {
 
-  avatar:string;
-  userSucursalInfo: any;
+  user:ProfileInfoInteface;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.avatar = 'assets/img/perfil/avatar.png';
-    this.userSucursalInfo = { visits: 0, discounts: 0 };
+    this.user.avatar = 'assets/img/perfil/avatar.png';
+    this.user.visits = 0;
+    this.user.discounts = 0;
   }
 
   ionViewDidLoad() {

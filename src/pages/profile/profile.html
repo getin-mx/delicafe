@@ -1,25 +1,43 @@
 <ion-content text-center class="cont common">
-  <div class="clTrans common">
-    <div class="imgCont">
-        <img src="{{avatar}}" class="logo">
-    </div>
-    <div class="visits">
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <div color="insti">
-              <b>{{userSucursalInfo.visits}} <br>
-              <span>Visitas</span></b>
-            </div>
-          </ion-col>
-          <ion-col>
-            <div>
-              <b>{{userSucursalInfo.discounts}} <br>
-              <span>Descuentos</span></b>
-            </div>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </div>
-  </div>
+
+  <ion-list>
+    <ion-item *ngIf="marker.name != 'Mi ubicacion'">
+      <img [src]="marker.uriImage">
+    </ion-item>
+
+    <ion-item text-center>
+      <div class="name">
+        <span class="title " padding>Sucursal:</span><br>
+        <div class="info">
+          {{ marker.name }}
+        </div>
+      </div>
+    </ion-item>
+
+    <ion-item text-center>
+      <div class="direction">
+        <span class="title" padding>Direccion:</span><br>
+        <div class="info">
+          {{ marker.address }}
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <ion-grid class="visits">
+    <ion-row>
+      <ion-col>
+        <div color="insti">
+          <b>{{userSucursalInfo.visits}} <br>
+          <span>Visitas</span></b>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <b>{{userSucursalInfo.discounts}} <br>
+          <span>Descuentos</span></b>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
