@@ -1,3 +1,12 @@
 page-marker-details {
+  .title {
+    color: color($colors, 'promos');
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .info{
+    font-size: 20px;
+  }
 
 }

@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { Geolocation } from '@ionic-native/geolocation';
-import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { CloudModule } from '@ionic/cloud-angular';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';

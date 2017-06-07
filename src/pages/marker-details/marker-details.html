@@ -17,15 +17,21 @@
      <img [src]="marker.uriImage">
    </ion-item>
 
-   <ion-item>
-     <div class="title">
-       {{ marker.name }}
+   <ion-item text-center>
+     <div class="name">
+       <span class="title " padding>Sucursal:</span><br>
+       <div class="info">
+         {{ marker.name }}
+       </div>
      </div>
    </ion-item>
 
-   <ion-item>
+   <ion-item text-center>
      <div class="direction">
-       {{  }}
+       <span class="title" padding>Direccion:</span><br>
+       <div class="info">
+         {{ marker.address }}
+       </div>
      </div>
    </ion-item>
 
@@ -35,7 +41,7 @@
 
    <ion-row>
      <ion-col>
-       <button ion-button block icon-left>
+       <button ion-button block icon-left (click)="showMap()">
          <ion-icon name="map"></ion-icon>
           Como llegar
        </button>
