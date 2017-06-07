@@ -1,31 +1,26 @@
 page-home {
-  .cont{
-    background: url("../../assets/img/login/04.png");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .clTrans{
-    background: color($colors, 'instiTrans');
-  }
-  .imgCont{
-    align-items: center;
-  }
-  .logo{
-    width: 70%;
-    padding-top: 55%;
-    margin: 0 auto;
-  }
-  .common{
-    margin: 0 auto;
+  img {
     height: 100%;
+    width: 100;
   }
 
-  ion-buttons{
-    padding-top: 20%;
+  .contenido {
+    width: 100%;
+    height: 50%;
+    margin-top: -130%;
   }
 
-  button{
+  .item.item-trns {
+	  border-color: rgba(0, 0, 0, 0);
+	  background-color: rgba(0, 0, 0, 0);
+  }
+
+  .button{
+    width: 80%;
+  }
+
+  img.logo{
     width: 70%;
-    border-radius: 25px;
+    padding-bottom: 20%;
   }
 }
