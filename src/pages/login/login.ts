@@ -3,9 +3,12 @@ import { NavController, IonicPage, Loading, LoadingController, AlertController }
 
 import { Auth, User, FacebookAuth } from '@ionic/cloud-angular';
 import { SQLite } from "ionic-native";
+import { FirebaseListObservable } from 'angularfire2/database';
 
 import { SignUpPage } from "../signup/signup";
 import { TabsPage } from "../tabs/tabs";
+
+import { FirebaseCallProvider } from "../../providers/firebase-call/firebase-call";
 
 @IonicPage()
 @Component({
@@ -19,8 +22,12 @@ export class LoginPage {
 
   database: SQLite;
 
+  users: FirebaseListObservable<any[]>;
+
   constructor(private nav: NavController, public auth: Auth, public user: User, private alertCtrl: AlertController,
-     private loadingCtrl: LoadingController, private facebookAuth: FacebookAuth) {
+     private loadingCtrl: LoadingController, private facebookAuth: FacebookAuth,private _fbcp:FirebaseCallProvider) {
+
+    this.users = this._fbcp.getUser();
 
     this.credentials = {"email": "", "password": ""};
     this.database = new SQLite();
