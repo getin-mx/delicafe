@@ -34,7 +34,9 @@ export class BranchOfficePage {
   showMapDetails( idxMark ){
 
     this.branchSelected = this.coordinates[idxMark];
-    this.showModal( this.branchSelected );
+
+    if(this.branchSelected.name != "Mi ubicacion")
+      this.showModal( this.branchSelected );
 
   }
 

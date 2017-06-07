@@ -1,30 +1,32 @@
 <ion-header>
-
  <ion-navbar>
-
    <ion-buttons>
      <button ion-button (click)="closeModal()">
        Cerrar
      </button>
    </ion-buttons>
-
-   <ion-title>{{ titulo | placeholder:"Crear Post" }}</ion-title>
+   <ion-title>{{ marker.name | placeholder:"Location" }}</ion-title>
  </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-
  <ion-list>
 
-   <ion-item>
-     <ion-label floating>Titulo</ion-label>
-     <ion-input type="text" [(ngModel)]="titulo"></ion-input>
+   <ion-item *ngIf="marker.name != 'Mi ubicacion'">
+     <img [src]="marker.uriImage">
    </ion-item>
 
-   <ion-item *ngIf="imgPrewiew">
-     <img [src]="imgPrewiew">
+   <ion-item>
+     <div class="title">
+       {{ marker.name }}
+     </div>
+   </ion-item>
+
+   <ion-item>
+     <div class="direction">
+       {{  }}
+     </div>
    </ion-item>
 
  </ion-list>
@@ -33,15 +35,9 @@
 
    <ion-row>
      <ion-col>
-       <button ion-button block icon-left (click)="selectImage()">
-         <ion-icon name="photos"></ion-icon>
-         Seleccionar
-       </button>
-     </ion-col>
-     <ion-col>
-       <button ion-button block icon-left (click)="showCamera()">
-         <ion-icon name="camera"></ion-icon>
-         Camara
+       <button ion-button block icon-left>
+         <ion-icon name="map"></ion-icon>
+          Como llegar
        </button>
      </ion-col>
 
