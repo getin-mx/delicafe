@@ -27,6 +27,7 @@
         "@ionic/cloud-angular": "^0.12.0",
         "@ionic/storage": "2.0.1",
         "angular2-google-maps": "^0.17.0",
+        "angular2-image-gallery": "^1.0.1",
         "angularfire2": "^4.0.0-rc.1",
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
@@ -35,6 +36,7 @@
         "cordova-plugin-device": "^1.1.4",
         "cordova-plugin-facebook4": "^1.9.1",
         "cordova-plugin-geolocation": "^2.4.3",
+        "cordova-plugin-inappbrowser": "^1.7.1",
         "cordova-plugin-splashscreen": "^4.0.3",
         "cordova-plugin-statusbar": "^2.2.2",
         "cordova-plugin-whitelist": "^1.3.1",
@@ -43,6 +45,7 @@
         "ionic-angular": "3.3.0",
         "ionic-plugin-keyboard": "^2.2.1",
         "ionicons": "3.0.0",
+        "ng2-cordova-oauth": "0.0.8",
         "promise-polyfill": "6.0.2",
         "rxjs": "5.1.1",
         "sw-toolbox": "3.6.0",
@@ -68,7 +71,8 @@
             "cordova-plugin-facebook4": {
                 "APP_ID": "1368729913210700",
                 "APP_NAME": "DeliCafe"
-            }
+            },
+            "cordova-plugin-inappbrowser": {}
         },
         "platforms": [
             "android",
