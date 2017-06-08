@@ -25,7 +25,6 @@ import { SocialPage } from '../pages/social/social';
 import { TabsPage } from "../pages/tabs/tabs";
 import { MarkerDetailsPage } from "../pages/marker-details/marker-details";
 //Services, providers and configuration files
-import { AuthServiceProvider } from '../providers/auth-service/auth-service';
 import { firebaseConfig } from "../config/firebase.config";
 import { cloudSettings } from "../config/cloudSettings.config";
 import { FirebaseCallProvider } from '../providers/firebase-call/firebase-call';
@@ -75,7 +74,6 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
-    AuthServiceProvider,
     FirebaseCallProvider,
   ]
 })
