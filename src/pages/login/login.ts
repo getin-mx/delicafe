@@ -2,13 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage, Loading, LoadingController, AlertController } from 'ionic-angular';
 
 import { Auth, User, FacebookAuth } from '@ionic/cloud-angular';
-import { SQLite } from "ionic-native";
-import { FirebaseListObservable } from 'angularfire2/database';
 
 import { SignUpPage } from "../signup/signup";
 import { TabsPage } from "../tabs/tabs";
-
-import { FirebaseCallProvider } from "../../providers/firebase-call/firebase-call";
 
 @IonicPage()
 @Component({
@@ -20,23 +16,11 @@ export class LoginPage {
   credentials:any;
   loading: Loading;
 
-  database: SQLite;
-
-  users: FirebaseListObservable<any[]>;
-
   constructor(private nav: NavController, public auth: Auth, public user: User, private alertCtrl: AlertController,
-     private loadingCtrl: LoadingController, private facebookAuth: FacebookAuth,private _fbcp:FirebaseCallProvider) {
-
-    this.users = this._fbcp.getUser();
+     private loadingCtrl: LoadingController, private facebookAuth: FacebookAuth) {
 
     this.credentials = {"email": "", "password": ""};
-    this.database = new SQLite();
-    this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
-      console.log(this.database);
-    }, (error) => {
-      console.log("ERROR: ", error);
-    });
-    this.autoLogin();
+
   }
 
   login() {
@@ -85,19 +69,64 @@ export class LoginPage {
     this.nav.push(SignUpPage);
   }
 
-  autoLogin() {
-    this.database.executeSql("SELECT * FROM people", []).then((data) => {
-      console.log(data);
-      if(data.rows.length > 0) {
-        for(var i = 0; i < data.rows.length; i++) {
-          this.credentials.email = data.rows.item(i).email;
-          this.credentials.password = data.rows.item(i).password;
+  sendPassword(  ) {
+    let prompt = this.alertCtrl.create({
+      title: 'Recuperar Contraseña',
+      message: "Ingrese su direccion de correo, se enviara un email con un codigo de verifiacion",
+      inputs: [
+        {
+          name: 'email',
+          placeholder: 'Correo'
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancelar',
+          handler: data => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Enviar',
+          handler: data => {
+            console.log(data.email);
+            this.auth.requestPasswordReset(data.email);
+            let passConfirmation = this.alertCtrl.create({
+              title: 'Codigo confirmacion',
+              message: "Ingrese el codigo de verificacion",
+              inputs: [
+                {
+                  name: 'code',
+                  placeholder: 'Codigo'
+                },{
+                  name: 'newPass',
+                  placeholder: 'Nueva contraseña',
+                  type: "password"
+                }
+              ],
+              buttons: [
+                {
+                  text: 'Cancelar',
+                  handler: data => {
+                    console.log('Cancel clicked');
+                  }
+                },
+                {
+                  text: 'Enviar',
+                  handler: data => {
+                    console.log(data.code);
+                    console.log(data.newPass);
+                    this.auth.confirmPasswordReset(data.code, data.newPass);
+                  }
+                }
+              ]
+            });
+            passConfirmation.present();
+          }
         }
-        this.login();
-      }
-    }, (error) => {
-      console.log("ERROR: " + JSON.stringify(error));
+      ]
     });
+    prompt.present();
   }
 
 }
