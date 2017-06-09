@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController } from 'ionic-angular';
+import { NavController, NavParams, Platform } from 'ionic-angular';
 
 import { Geolocation } from '@ionic-native/geolocation';
 
 import { dataCoordinates } from "../../config/branchoffices.locations";
 import { BranchOfficeInfo } from "../../interfaces/branch-office-info/branch-office-info.interface";
-
-import { MarkerDetailsPage } from "../marker-details/marker-details";
 
 @Component({
   selector: 'page-branchoffice',
@@ -20,7 +18,10 @@ export class BranchOfficePage {
   lat: number = 19.4351039;
   lng: number = -99.1839505;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, public modalCtrl: ModalController) {
+  showInfo:boolean = false;
+  lastMarkerName:string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation, private platform:Platform) {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.lat = resp.coords.latitude;
       this.lng = resp.coords.longitude;
@@ -32,22 +33,27 @@ export class BranchOfficePage {
   }
 
   showMapDetails( idxMark ){
-
     this.branchSelected = this.coordinates[idxMark];
 
-    if(this.branchSelected.name != "Mi ubicacion")
-      this.showModal( this.branchSelected );
-
-  }
-
-  showModal( marker:BranchOfficeInfo ) {
-    let modal = this.modalCtrl.create(
-      MarkerDetailsPage,
-      {
-        makerInfo: marker
+    if(this.branchSelected.name != "Mi ubicacion"){
+      if ( this.branchSelected.name != this.lastMarkerName ){
+        this.showInfo = true;
+      }else{
+        this.showInfo = !this.showInfo;
       }
-    );
-    modal.present();
+      this.lastMarkerName = this.branchSelected.name;
+    }
+  }// end showMapDetails()
+
+  showMap(){
+      let destination = this.branchSelected.lat + ',' + this.branchSelected.lng;
+
+      if(this.platform.is('ios')){
+  	    window.open('maps://?q=' + destination, '_system');
+      } else {
+  	     let label = encodeURI(this.branchSelected.name);
+  	      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
+      }
   }
 
 }

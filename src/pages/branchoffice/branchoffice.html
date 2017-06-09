@@ -9,22 +9,25 @@
       [iconUrl]="coordinate.icon" *ngFor="let coordinate of coordinates; let i = index" >
     </sebm-google-map-marker>
   </sebm-google-map>
-  <div class="branchInfo" *ngIf="showInfo">
-    <ion-card>
-      <img src="{{branchSelected.uriImage}}"/>
-      <ion-card-content text-left color="promos">
+  <ion-item class="branchInfo" *ngIf="showInfo" color="lgnBtn">
+    <ion-row>
+      <ion-col>
+        <img src="{{branchSelected.uriImage}}"/>
+      </ion-col>
+      <ion-col>
         <p class="promo-title">
-          {{branchSelected.name}}
+          Sucursal:
         </p>
-        <ion-row text-left>
-          <ion-col>
-            <button ion-button clear small color="danger" icon-left>
-              <ion-icon name='map'></ion-icon>
-              <a href="http://maps.google.com?q={{branchSelected.lat}},{{branchSelected.lng}}">Como llegar</a>
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
-  </div>
+        <span class="details"> {{branchSelected.name}} </span><br>
+        <span class="details"> {{branchSelected.address}} </span><br>
+        <span class="promo-title">
+          Tel:
+        </span>
+        <span class="details"> 55000000 </span>
+        <button ion-button (click)="showMap()" color="goToBtn" small round>
+           Como llegar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
 </ion-content>
