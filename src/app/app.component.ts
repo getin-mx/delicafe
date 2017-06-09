@@ -19,7 +19,7 @@ export class MyApp {
       statusBar.styleDefault();
       setTimeout(() => {
         splashScreen.hide();
-      }, 10000);
+      }, 1000);
       let db = new SQLite();
       db.openDatabase({
         name: "data.db",

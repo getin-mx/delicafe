@@ -8,6 +8,9 @@ page-branchoffice {
     height: 25%;
     margin-top: -33%;
     padding: 10px;
+    border-top: 4px;
+    border-top-style: solid;
+    border-top-color: color($colors, goToBtn);
   }
 
   ion-row{
@@ -42,7 +45,7 @@ page-branchoffice {
 
   .goToMap{
     margin-left: 11%;
-    margin-top: -5%;
+    margin-top: -5.5%;
   }
 
 }
