@@ -23,7 +23,6 @@ import { PromosPage } from '../pages/promos/promos';
 import { SignUpPage } from '../pages/signup/signup';
 import { SocialPage } from '../pages/social/social';
 import { TabsPage } from "../pages/tabs/tabs";
-import { MarkerDetailsPage } from "../pages/marker-details/marker-details";
 //Services, providers and configuration files
 import { firebaseConfig } from "../config/firebase.config";
 import { cloudSettings } from "../config/cloudSettings.config";
@@ -42,7 +41,6 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
     SocialPage,
     TabsPage,
     PlaceholderPipe,
-    MarkerDetailsPage
   ],
   imports: [
     BrowserModule,
@@ -67,7 +65,6 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
     SignUpPage,
     SocialPage,
     TabsPage,
-    MarkerDetailsPage
   ],
   providers: [
     StatusBar,
