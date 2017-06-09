@@ -8,9 +8,39 @@
   <img src="assets/img/login/07.png">
 
   <div class="contenido">
+
     <ion-item class="item item-trns" text-center>
       <img src="assets/img/common/logo.gif" class="logo">
     </ion-item>
-  </div>
 
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item class="inpTxt" text-center>
+            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="credentials.email" required class="item item-trns inptText"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="inpTxt" text-center>
+            <ion-input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="credentials.name" required class="item item-trns inptText"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="inpTxt" text-center>
+            <ion-input type="password" placeholder="Password" name="Contrasena" [(ngModel)]="credentials.password" required class="item item-trns inptText"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col text-center>
+          <button ion-button color="regBtn" type="submit" round>Registrate</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
 </ion-content>
