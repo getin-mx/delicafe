@@ -1,5 +1,5 @@
 <ion-header>
-
+  
 </ion-header>
 
 <ion-content class="cards-bg">
@@ -11,26 +11,25 @@
         <p class="promo-title">
           Sucursal:
         </p>
-        <p text-left>
+        <p text-left class="details">
           {{branch.name}} <br>
           {{branch.address}}
         </p>
         <p class="promo-title">
           Promoci&oacute;n del d&iacute;a:
         </p>
-        <p class="promo-content">
+        <p class="promo-content" class="details">
           {{branch.promotions}}
         </p>
         <ion-row no-padding text-left>
           <ion-col>
-            <button ion-button clear small color="danger" (click)="showMap( i )" icon-left>
-              <ion-icon name='map'></ion-icon>
+            <button ion-button small color="goToBtn" (click)="showMap( i )" icon-left round>
               Como llegar
             </button>
           </ion-col>
         </ion-row>
       </ion-card-content>
     </ion-card>
-    
+
   </div>
 </ion-content>

@@ -12,6 +12,7 @@ import { BranchOfficeInfo } from "../../interfaces/branch-office-info/branch-off
 export class PromosPage {
 
   branchOffices:BranchOfficeInfo[] = dataCoordinates;
+  searchBar:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private platform:Platform) {
   }
@@ -25,6 +26,12 @@ export class PromosPage {
 	     let label = encodeURI('My Label');
 	      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
     }
+  }
+
+  onInput( event:any ){
+
+    console.log(event);
+
   }
 
 }

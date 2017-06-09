@@ -9,7 +9,7 @@
       [iconUrl]="coordinate.icon" *ngFor="let coordinate of coordinates; let i = index" >
     </sebm-google-map-marker>
   </sebm-google-map>
-  <ion-item class="branchInfo" *ngIf="showInfo" color="lgnBtn">
+  <ion-item class="branchInfo" *ngIf="showInfo" color="promos">
     <ion-row>
       <ion-col>
         <p class="promo-title">
@@ -21,7 +21,7 @@
           Tel:
         </span>
         <span class="details"> 55000000 </span>
-        <button ion-button (click)="showMap()" color="goToBtn" small round>
+        <button ion-button (click)="showMap()" color="goToBtn" small round end class="goToMap">
            Como llegar
         </button>
       </ion-col>
