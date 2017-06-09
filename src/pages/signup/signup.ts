@@ -16,6 +16,7 @@ export class SignUpPage {
   loading: Loading;
   createSuccess:boolean = false;
   database: SQLite;
+  myDate:any;
 
   constructor(private nav: NavController, private alertCtrl: AlertController, public auth: Auth, public user: User, private loadingCtrl: LoadingController) {
     this.credentials = {"email": "", "password":"", "name":""};
