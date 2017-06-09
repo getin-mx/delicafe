@@ -1,57 +1,6 @@
 page-signup {
-  .imageBg{
-    background: color($colors, 'instiTrans');
-    width: 100%;
-    margin-top: -10%;
-    padding-top: 20%;
-    height: 110%;;
-  }
-
-  .login-content{
-
-    background-image: url("../../assets/img/login/06.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
+  img {
     height: 100%;
-  }
-
-  .login-content {
-
-    .login-box {
-      padding: 20px 20px 0px 20px;
-      margin-top: 30px;
-    }
-
-    ion-row {
-       align-items: center;
-       text-align: center;
-     }
-
-     ion-item {
-         border-radius: 30px !important;
-         padding-left: 30px !important;
-         font-size: 0.9em;
-         margin-bottom: 10px;
-         border: 1px solid #ffffff;
-         border-bottom: 0px !important;
-         box-shadow: none !important;
-     }
-
-     .signup-col {
-       margin: 0px 16px 0px 16px;
-       padding-bottom: 20px;
-     }
-
-     .item-inner {
-       border-bottom-color: #ffffff !important;
-       box-shadow: none !important;
-     }
-
-     .submit-btn {
-       background: color($colors, 'lgnBtn');
-       border-radius: 30px !important;
-       border: 1px solid #ffffff;
-     }
+    width: 100%;
   }
 }
