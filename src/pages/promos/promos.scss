@@ -8,20 +8,34 @@ page-promos {
    position: relative;
    text-align: center;
    background: #fffce6;
-   height: 190px;
+   height: 225px;
  }
 
- ion-card img {
-  width: 50%;
-  height: 100%;
+  ion-card img {
+    width: 45%;
+    margin-top: 24%;
+ }
+
+ ion-header img{
+   position: relative;
+   margin: 0 auto;
+   width: 20%;
+ }
+
+ ion-header{
+   background-color: color($colors, insti);
+ }
+
+ button{
+   width: 90%;
  }
 
  ion-card-content{
    position: absolute;
-   top: 5%;
-   margin-left: 50%;
-   width: 55%;
-   padding: 15px;
+    top: 5%;
+    margin-left: 40%;
+    width: 65%;
+    padding: 5px
  }
 
  ion-row{

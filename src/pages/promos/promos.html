@@ -1,11 +1,20 @@
-<ion-header>
-  
+<ion-header color="insti" text-center>
+  <img src="assets/img/common/logo.png" alt="">
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionInput)="onInput($event)"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
 </ion-header>
 
 <ion-content class="cards-bg">
   <div *ngFor="let branch of branchOffices; let i = index;">
 
     <ion-card *ngIf="i != 0">
+      <div class="imgBgr">
+
+      </div>
       <img src="{{branch.uriImage}}"/>
       <ion-card-content text-left>
         <p class="promo-title">
