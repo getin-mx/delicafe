@@ -1,21 +1,5 @@
 page-promos {
 
-  ion-content{
-    background: #967F71;
-  }
-
-  ion-card {
-   position: relative;
-   text-align: center;
-   background: #fffce6;
-   height: 225px;
- }
-
-  ion-card img {
-    width: 45%;
-    margin-top: 24%;
- }
-
  ion-header img{
    position: relative;
    margin: 0 auto;
@@ -26,21 +10,31 @@ page-promos {
    background-color: color($colors, insti);
  }
 
- button{
-   width: 90%;
+ ion-item{
+   width: 100%;
  }
 
- ion-card-content{
-   position: absolute;
-    top: 5%;
-    margin-left: 40%;
-    width: 65%;
-    padding: 5px
+ .item-inner {
+   border-bottom: 0.55px solid color($colors, insti) !important;
  }
 
  ion-row{
    width: 100%;
  }
+
+ .branchImage{
+   width: 100%;
+ }
+
+ ion-row img {
+   width: 100%;
+ }
+
+ .brancDetails {
+   width: 55%;
+   padding: 3px;
+ }
+
  .promo-title{
    @font-face {
      font-family: 'Open Sans Semibold';
@@ -66,4 +60,6 @@ page-promos {
    font-weight: lighter;
    color: color($colors, "insti");
  }
+
+
 }

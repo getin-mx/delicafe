@@ -11,34 +11,31 @@
 <ion-content class="cards-bg">
   <div *ngFor="let branch of branchOffices; let i = index;">
 
-    <ion-card *ngIf="i != 0">
-      <div class="imgBgr">
-
-      </div>
-      <img src="{{branch.uriImage}}"/>
-      <ion-card-content text-left>
-        <p class="promo-title">
-          Sucursal:
-        </p>
-        <p text-left class="details">
-          {{branch.name}} <br>
-          {{branch.address}}
-        </p>
-        <p class="promo-title">
-          Promoci&oacute;n del d&iacute;a:
-        </p>
-        <p class="promo-content" class="details">
-          {{branch.promotions}}
-        </p>
-        <ion-row no-padding text-left>
-          <ion-col>
-            <button ion-button small color="goToBtn" (click)="showMap( i )" icon-left round>
-              Como llegar
-            </button>
-          </ion-col>
-        </ion-row>
-      </ion-card-content>
-    </ion-card>
+    <ion-item *ngIf="i != 0">
+      <ion-row>
+        <ion-col class="branchImage" text-center>
+          <img src="{{branch.uriImage}}"/>
+        </ion-col>
+        <ion-col class="brancDetails">
+          <p class="promo-title">
+            Sucursal:
+          </p>
+          <p text-left class="details">
+            {{branch.name}} <br>
+            {{branch.address}}
+          </p>
+          <p class="promo-title">
+            Promoci&oacute;n del d&iacute;a:
+          </p>
+          <p class="promo-content" class="details">
+            {{branch.promotions}}
+          </p><br>
+          <button ion-button small color="goToBtn" (click)="showMap( i )" icon-left round>
+            Como llegar
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-item>
 
   </div>
 </ion-content>
