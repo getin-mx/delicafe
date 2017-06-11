@@ -11,21 +11,23 @@
   </sebm-google-map>
   <ion-item class="branchInfo" *ngIf="showInfo" color="promos">
     <ion-row>
-      <ion-col>
+      <ion-col class="brancDetails">
         <p class="promo-title">
           Sucursal:
         </p>
-        <p>
-          <span class="details"> {{branchSelected.name}} </span><br>
-          <span class="details"> {{branchSelected.address}} </span><br>
+        <p text-left class="details">
+          {{branchSelected.name}} <br>
+          {{branchSelected.address}}
         </p>
-        <span class="promo-title">
+        <p class="promo-title">
           Tel:
-        </span>
-        <span class="details"> 55000000 </span>
-        <button ion-button (click)="showMap()" color="goToBtn" small round end class="goToMap">
-           Como llegar
-        </button>
+        </p>
+        <p class="promo-content" class="details">
+          55 0000 0000
+          <button ion-button small color="goToBtn" (click)="showMap()" icon-left round>
+            Como llegar
+          </button>
+        </p>
       </ion-col>
     </ion-row>
   </ion-item>
