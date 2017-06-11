@@ -30,7 +30,12 @@ export class PromosPage {
   }
 
   goToPromoDetails( idxOffice:number ){
-    this.navCtrl.push(PromotionDetailsPage);
+    this.navCtrl.push(
+      PromotionDetailsPage,
+      {
+        'branchInfo': this.branchOffices[idxOffice],
+      }
+    );
   }
 
   onInput( event:any ){

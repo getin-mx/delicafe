@@ -1,3 +1,55 @@
 page-promotion-details {
 
+  ion-title img{
+    width: 50%;
+  }
+
+  ion-content img{
+    width: 100%;
+  }
+
+  ion-item{
+    width: 100%;
+    height: auto;
+  }
+
+  .borderTop .item-inner {
+    width: 100%;
+    border-top: 4px solid color($colors, goToBtn) !important;
+  }
+
+  .promo-title{
+    @font-face {
+      font-family: 'Open Sans Semibold';
+      font-style: normal;
+      src:url('https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff') format('woff');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    color: color($colors, "insti");
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 22px;
+  }
+
+  .details {
+    @font-face {
+      font-family: 'Open Sans Light';
+      font-style: normal;
+      font-weight: 300;
+      src:url('https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff') format('woff');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    font-size: 17px;
+    font-weight: lighter;
+    color: color($colors, "insti");
+  }
+
+  .brancDetails {
+    background-color: color($colors, lgnBtn);
+  }
+
+  .promoDayDetails {
+    background-color: color($colors, regBtn);
+  }
+
 }

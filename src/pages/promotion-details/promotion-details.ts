@@ -1,24 +1,19 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the PromotionDetailsPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { BranchOfficeInfo } from "../../interfaces/branch-office-info/branch-office-info.interface";
+
 @IonicPage()
 @Component({
   selector: 'page-promotion-details',
   templateUrl: 'promotion-details.html',
 })
 export class PromotionDetailsPage {
+  branchOfficeDetails:BranchOfficeInfo;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PromotionDetailsPage');
+    this.branchOfficeDetails = this.navParams.get('branchInfo');
+    console.log(this.branchOfficeDetails);
   }
 
 }

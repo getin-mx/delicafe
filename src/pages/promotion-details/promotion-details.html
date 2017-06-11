@@ -1,18 +1,55 @@
-<!--
-  Generated template for the PromotionDetailsPage page.
+<ion-header color="insti">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>PromotionDetails</ion-title>
+  <ion-navbar color="insti">
+    <ion-title><img src="assets/img/common/logo.png"></ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+  <img src="{{branchOfficeDetails.uriImage}}" />
+
+  <ion-item class="borderTop brancDetails">
+    <ion-row class="brancDetails" color="lgnBtn">
+      <ion-col class="brancDetails" color="lgnBtn">
+        <p class="promo-title">
+          Sucursal:
+        </p>
+        <p text-left class="details">
+          {{branchOfficeDetails.name}} <br>
+          {{branchOfficeDetails.address}}
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+  <ion-item class="promoDayDetails">
+    <ion-row>
+      <ion-col>
+        <p class="promo-title">
+          Promoci&oacute;n del d&iacute;a:
+        </p>
+        <p class="promo-content" class="details">
+          {{branchOfficeDetails.promotions}}<br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+
+  <ion-item>
+    <ion-row>
+      <ion-col>
+        <p class="promo-title">
+          Promociones semanales:
+        </p>
+        <p class="promo-content" class="details">
+          {{branchOfficeDetails.promotions}}<br>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-item>
 
 </ion-content>
