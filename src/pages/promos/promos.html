@@ -1,10 +1,8 @@
 <ion-header color="insti" text-center>
   <img src="assets/img/common/logo.png" alt="">
   <ion-searchbar
-    [(ngModel)]="myInput"
     [showCancelButton]="shouldShowCancel"
-    (ionInput)="onInput($event)"
-    (ionCancel)="onCancel($event)">
+    (ionInput)="onInput($event)">
   </ion-searchbar>
 </ion-header>
 

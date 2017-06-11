@@ -30,7 +30,7 @@ export class PromosPage {
 
   onInput( event:any ){
 
-    console.log(event);
+    console.log(event.target.value);
 
   }
 
