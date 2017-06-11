@@ -1,5 +1,5 @@
 <ion-header color="insti" text-center>
-  <img src="assets/img/common/logo.png" alt="">
+  <img src="assets/img/common/logo.png">
   <ion-searchbar
     [showCancelButton]="shouldShowCancel"
     (ionInput)="onInput($event)">
@@ -12,7 +12,7 @@
     <ion-item *ngIf="i != 0">
       <ion-row>
         <ion-col class="branchImage" text-center>
-          <img src="{{branch.uriImage}}"/>
+          <img src="{{branch.uriImage}}" (click)="goToPromoDetails( i )" />
         </ion-col>
         <ion-col class="brancDetails">
           <p class="promo-title">

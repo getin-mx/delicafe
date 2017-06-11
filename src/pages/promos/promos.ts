@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 
 import { dataCoordinates } from "../../config/branchoffices.locations";
 import { BranchOfficeInfo } from "../../interfaces/branch-office-info/branch-office-info.interface";
+import { PromotionDetailsPage } from "../promotion-details/promotion-details";
 
 @IonicPage()
 @Component({
@@ -26,6 +27,10 @@ export class PromosPage {
 	     let label = encodeURI('My Label');
 	      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
     }
+  }
+
+  goToPromoDetails( idxOffice:number ){
+    this.navCtrl.push(PromotionDetailsPage);
   }
 
   onInput( event:any ){
