@@ -7,11 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { CloudModule } from '@ionic/cloud-angular';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
-import { Instagram } from "ng2-cordova-oauth/core";
-import { OauthCordova } from 'ng2-cordova-oauth/platform/cordova';
+import { IonicStorageModule } from '@ionic/storage';
 //pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -23,11 +19,13 @@ import { SignUpPage } from '../pages/signup/signup';
 import { SocialPage } from '../pages/social/social';
 import { TabsPage } from "../pages/tabs/tabs";
 import { PromotionDetailsPage } from "../pages/promotion-details/promotion-details";
+import { ProfileDetailsPage } from "../pages/profile-details/profile-details";
 //Services, providers and configuration files
 import { firebaseConfig } from "../config/firebase.config";
 import { cloudSettings } from "../config/cloudSettings.config";
 import { FirebaseCallProvider } from '../providers/firebase-call/firebase-call';
 import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
+import { SafePipe } from '../pipes/safe/safe';
 
 @NgModule({
   declarations: [
@@ -41,15 +39,15 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
     SocialPage,
     TabsPage,
     PlaceholderPipe,
-    PromotionDetailsPage
+    PromotionDetailsPage,
+    ProfileDetailsPage,
+    SafePipe
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
-    AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
+    IonicStorageModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAFfe5_ZgKIGVbWRuokOwCMtKmeOVwm4ok'
     })
@@ -65,7 +63,8 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
     SignUpPage,
     SocialPage,
     TabsPage,
-    PromotionDetailsPage
+    PromotionDetailsPage,
+    ProfileDetailsPage
   ],
   providers: [
     StatusBar,

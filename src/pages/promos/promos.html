@@ -12,8 +12,7 @@
     <ion-item *ngIf="i != 0" class="promo-box">
       <ion-label class="nomargin">
       <ion-row (click)="goToPromoDetails( i )">
-        <ion-col class="branchImage">
-          <div class="branchImage" style="background-image: url('/{{branch.uriImage}}');"></div>
+        <ion-col class="branchImage" style="background-image:url('../{{branchOfficesSani[i]}}')"><!-- url('../{{branch.uriImage}})' | safe: 'style' -->
         </ion-col>
         <ion-col class="brancDetails">
           <p class="promo-title">

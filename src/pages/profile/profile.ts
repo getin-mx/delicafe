@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { ProfileInfoInteface } from "../../interfaces/profile-info/profile-info.interface";
+import { ProfileDetailsPage } from "../profile-details/profile-details";
 
 @IonicPage()
 @Component({
@@ -23,6 +24,10 @@ export class ProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
+  }
+
+  goToProfileDetails() {
+    this.navCtrl.push( ProfileDetailsPage );
   }
 
 }

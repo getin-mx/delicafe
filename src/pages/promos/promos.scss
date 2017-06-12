@@ -22,13 +22,6 @@ page-promos {
    width: 100%;
  }
 
- .branchImage{
-    width: 100%;
-    background-image: url(/assets/img/branchoffices/Constituyentes_2.JPG);
-    background-size: cover;
-    background-position: center;
- }
-
  ion-row img {
    width: 100%;
  }
@@ -72,5 +65,11 @@ page-promos {
    color: color($colors, "insti");
  }
 
+ .branchImage {
+   width: 100%;
+   background-image: url("../assets/img/branchoffices/Constituyentes_2.JPG");
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
 
 }

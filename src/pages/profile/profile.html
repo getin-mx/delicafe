@@ -1,6 +1,6 @@
 <ion-content text-center>
   <div class="contenido" color="promos">
-    <img src="{{user.userImge}}" class="roundImage"><br>
+    <img src="{{user.userImge}}" class="roundImage" (click)="goToProfileDetails()"><br>
     <span class="userName">{{user.name}}</span><br>
     <span class="userEmail">{{user.email}}</span>
   </div>
