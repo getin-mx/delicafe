@@ -10,16 +10,19 @@ import { ProfileInfoInteface } from "../../interfaces/profile-info/profile-info.
 })
 export class ProfilePage {
 
-  user:ProfileInfoInteface;
+  user:any = {
+    name: "Luis Alberto Cruz",
+    email: "luis@getin.mx",
+    birthday: null,
+    gender: "male",
+    userImge: "assets/img/login/04.png",
+    address: "Agustin Iturbide",
+    discounts: 0,
+    visits: 0,
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.user.avatar = 'assets/img/perfil/avatar.png';
-    this.user.visits = 0;
-    this.user.discounts = 0;
-  }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ProfilePage');
   }
 
 }

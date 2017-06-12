@@ -3,7 +3,7 @@ export interface ProfileInfoInteface {
   email:number,
   birthday:Date,
   gender:string,
-  avatar:string,
+  userImge:string,
   address:string,
   discounts:number,
   visits:number,

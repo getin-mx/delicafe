@@ -1,36 +1,44 @@
 page-profile {
-  .cont{
-    background: url("../../assets/img/login/04.png");
-    background-repeat: no-repeat;
-    background-position: center;
-  }
-  .clTrans{
-    background: color($colors, 'instiTrans');
-  }
-  .imgCont{
-    align-items: center;
-    height: 50%;
-  }
-  .logo{
-    width: 70%;
-    padding-top: 50%;
-    margin: 0 auto;
-  }
-  .common{
-    margin: 0 auto;
-    height: 100%;
-  }
-  .visits{
-    height: 10%;
-    background: color($colors, 'lgnBtn');
-    margin-top: 68%;
+
+  .contenido {
+    width: 100%;
+    height: 76%;
+    background-image: url("../assets/img/login/04.png");
   }
 
-  div span{
-    font-size: 17px;
+  .promotions {
+    width: 100%;
   }
 
-  ion-col div{
-    font-size: 23px;
+  .infoRound {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+	  border: 1px solid color($colors, insti);
+    margin: 0 auto;
+    @font-face {
+      font-family: 'Open Sans Light';
+      font-style: normal;
+      font-weight: 300;
+      src:url('https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff') format('woff');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    font-weight: bold;
+    color: color($colors, insti);
+    font-size: 13px
   }
+
+  .infoName {
+    @font-face {
+      font-family: 'Open Sans Light';
+      font-style: normal;
+      font-weight: 300;
+      src:url('https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRa1RVmPjeKy21_GQJaLlJI.woff') format('woff');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    font-weight: lighter;
+    color: color($colors, insti);
+    font-size: 15px
+  }
+
 }
