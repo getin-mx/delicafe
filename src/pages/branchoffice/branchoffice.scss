@@ -5,11 +5,12 @@ page-branchoffice {
 
   .branchInfo {
     width: 100%;
-    margin-top: -63%;
+    position: fixed;
+    bottom: 56px;
     padding: 10px;
     border-top: 4px;
     border-top-style: solid;
-    border-top-color: color($colors, goToBtn);
+    border-top-color: #ec8213;
   }
 
   ion-row{
@@ -43,8 +44,7 @@ page-branchoffice {
   }
 
   button{
-    margin-left: 10% !important;
-    margin-bottom: 5% !important;
+    float: right;
   }
 
 }
