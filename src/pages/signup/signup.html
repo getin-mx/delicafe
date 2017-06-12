@@ -9,13 +9,9 @@
 
     <ion-grid>
       <ion-row>
-        <ion-col>
-          <ion-item class="inpTxt" text-center>
-            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="credentials.email" required class="item item-trns inptText"></ion-input>
-          </ion-item>
+        <ion-col class="imgIcon">
+          <img src="assets/img/login/profile.png" alt="">
         </ion-col>
-      </ion-row>
-      <ion-row>
         <ion-col>
           <ion-item class="inpTxt" text-center>
             <ion-input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="credentials.name" required class="item item-trns inptText"></ion-input>
@@ -23,9 +19,22 @@
         </ion-col>
       </ion-row>
       <ion-row>
+        <ion-col class="imgIcon">
+          <img src="assets/img/login/password.png" alt="">
+        </ion-col>
         <ion-col>
           <ion-item class="inpTxt" text-center>
             <ion-input type="password" placeholder="Password" name="Contrasena" [(ngModel)]="credentials.password" required class="item item-trns inptText"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="imgIcon">
+          <img src="assets/img/login/email.png" alt="">
+        </ion-col>
+        <ion-col>
+          <ion-item class="inpTxt" text-center>
+            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="credentials.email" required class="item item-trns inptText"></ion-input>
           </ion-item>
         </ion-col>
       </ion-row>
@@ -35,7 +44,22 @@
           <button ion-button color="regBtn" type="submit" (click)="register()" round>Registrate</button>
         </ion-col>
       </ion-row>
+      <ion-row>
+        <ion-col class="signup-col" text-center>
+          <button ion-button class="register-btn" clear (click)="goToLogin()" color="light">Ya tienes una cuenta?</button><br>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <button ion-button color="regBtn" type="submit" (click)="register()" round>Conectar con Facebook</button>
+          </ion-item>
+        </ion-col>
+      </ion-row>
     </ion-grid>
+
+
 
   </div>
 </ion-content>
