@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
+import { Storage } from '@ionic/storage';
+
 import { LoginPage } from "../login/login";
 import { SignUpPage } from "../signup/signup";
 
@@ -10,7 +12,7 @@ import { SignUpPage } from "../signup/signup";
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private storage: Storage) {
 
   }
 
