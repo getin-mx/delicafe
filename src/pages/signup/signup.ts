@@ -5,6 +5,7 @@ import { Auth, User, UserDetails } from '@ionic/cloud-angular';
 import { SQLite } from "ionic-native";
 
 import { TabsPage } from "../tabs/tabs";
+import { LoginPage } from "../login/login";
 
 @Component({
   selector: 'page-signup',
@@ -91,6 +92,14 @@ export class SignUpPage {
       console.log("ERROR: " + JSON.stringify(error.err));
     });
     console.log(this.database);
+  }
+
+  goToLogin() {
+    this.nav.push( LoginPage );
+  }
+
+  fbRegister(){
+    
   }
 
 }
