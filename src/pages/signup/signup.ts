@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, Loading, LoadingController } from 'ionic-angular';
 
 import { Auth, User, UserDetails } from '@ionic/cloud-angular';
-import { SQLite } from "ionic-native";
 
 import { TabsPage } from "../tabs/tabs";
 import { LoginPage } from "../login/login";
@@ -16,17 +15,10 @@ export class SignUpPage {
   credentials:UserDetails;
   loading: Loading;
   createSuccess:boolean = false;
-  database: SQLite;
   myDate:any;
 
   constructor(private nav: NavController, private alertCtrl: AlertController, public auth: Auth, public user: User, private loadingCtrl: LoadingController) {
     this.credentials = {"email": "", "password":"", "name":""};
-    this.database = new SQLite();
-    this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
-      console.log(this.database);
-    }, (error) => {
-      console.log("ERROR: ", error);
-    });
   }
 
   public register() {
@@ -36,7 +28,6 @@ export class SignUpPage {
       console.log(this.auth);
       this.createSuccess = true;
       this.auth.login('basic', {"email":this.credentials.email, "password":this.credentials.password}).then(() => {
-        this.saveDataRegister();
         this.nav.setRoot( TabsPage );
       });
 
@@ -85,21 +76,12 @@ export class SignUpPage {
     alert.present(prompt);
   }
 
-  saveDataRegister() {
-    this.database.executeSql("INSERT INTO people (email, password) VALUES ('"+this.credentials.email+"', '"+this.credentials.password+"')", []).then((data) => {
-      console.log("INSERTED: " + JSON.stringify(data));
-    }, (error) => {
-      console.log("ERROR: " + JSON.stringify(error.err));
-    });
-    console.log(this.database);
-  }
-
   goToLogin() {
     this.nav.push( LoginPage );
   }
 
   fbRegister(){
-    
+
   }
 
 }
