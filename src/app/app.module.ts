@@ -21,9 +21,7 @@ import { TabsPage } from "../pages/tabs/tabs";
 import { PromotionDetailsPage } from "../pages/promotion-details/promotion-details";
 import { ProfileDetailsPage } from "../pages/profile-details/profile-details";
 //Services, providers and configuration files
-import { firebaseConfig } from "../config/firebase.config";
 import { cloudSettings } from "../config/cloudSettings.config";
-import { FirebaseCallProvider } from '../providers/firebase-call/firebase-call';
 import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
 import { SafePipe } from '../pipes/safe/safe';
 
@@ -71,7 +69,6 @@ import { SafePipe } from '../pipes/safe/safe';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
-    FirebaseCallProvider,
   ]
 })
 export class AppModule {}
