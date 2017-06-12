@@ -59,6 +59,11 @@ export class SocialPage {
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+  }
+
+  createImageGrid() {
+
   }
 
 
