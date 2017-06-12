@@ -10,7 +10,6 @@ import { CloudModule } from '@ionic/cloud-angular';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { Angular2ImageGalleryModule } from "angular2-image-gallery";
 import { Instagram } from "ng2-cordova-oauth/core";
 import { OauthCordova } from 'ng2-cordova-oauth/platform/cordova';
 //pages
@@ -51,7 +50,6 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    Angular2ImageGalleryModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAFfe5_ZgKIGVbWRuokOwCMtKmeOVwm4ok'
     })
