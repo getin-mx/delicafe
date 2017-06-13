@@ -37,6 +37,11 @@ export class ProfilePage {
         this.user.name = val;
       }
     });
+    storage.get('userImge').then((val) => {
+      if ( val != undefined || val != null ) {
+        this.user.userImge = val;
+      }
+    });
   }
 
   goToProfileDetails() {

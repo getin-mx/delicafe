@@ -3,6 +3,7 @@ import { IonicPage, NavParams, ViewController, ToastController } from 'ionic-ang
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
+import { Storage } from '@ionic/storage';
 
 import { ProfileInfoInteface } from "../../interfaces/profile-info/profile-info.interface";
 
@@ -16,7 +17,7 @@ export class ProfileDetailsPage {
   user:ProfileInfoInteface;
 
   constructor(public navParams: NavParams, private viewCtrl:ViewController, private camera:Camera,
-    private toastCtrl:ToastController, private imagePicker:ImagePicker) {
+    private toastCtrl:ToastController, private imagePicker:ImagePicker, private storage: Storage) {
 
     this.user = navParams.get('user');
     console.log(this.user);
@@ -48,6 +49,10 @@ export class ProfileDetailsPage {
       message: text,
       duration: 2500
     }).present();
+  }
+
+  save(){
+    this.storage.set('userImge', this.user.userImge);
   }
 
 }
