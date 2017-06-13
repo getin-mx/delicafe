@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, AlertController, Loading, LoadingController } from 'ionic-angular';
 
 import { Auth, User, UserDetails } from '@ionic/cloud-angular';
+import { Storage } from '@ionic/storage';
 
 import { TabsPage } from "../tabs/tabs";
 import { LoginPage } from "../login/login";
@@ -17,7 +18,8 @@ export class SignUpPage {
   createSuccess:boolean = false;
   myDate:any;
 
-  constructor(private nav: NavController, private alertCtrl: AlertController, public auth: Auth, public user: User, private loadingCtrl: LoadingController) {
+  constructor(private nav: NavController, private alertCtrl: AlertController,
+    public auth: Auth, public user: User, private loadingCtrl: LoadingController, private storage: Storage) {
     this.credentials = {"email": "", "password":"", "name":""};
   }
 
@@ -25,12 +27,14 @@ export class SignUpPage {
     this.showLoading();
 
     this.auth.signup( this.credentials ).then(() => {
-      console.log(this.auth);
       this.createSuccess = true;
-      this.auth.login('basic', {"email":this.credentials.email, "password":this.credentials.password}).then(() => {
-        this.nav.setRoot( TabsPage );
-      });
-
+      let authToken = this.auth.getToken();
+      // set a key/value
+      this.storage.set('authToken', authToken);
+      this.storage.set('email', this.credentials.email);
+      this.storage.set('password', this.credentials.password);
+      this.storage.set('name', this.credentials.name);
+      this.nav.setRoot( TabsPage );
     }, (err) => {
       this.showError(err);
     });

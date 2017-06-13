@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 
 import { LoginPage } from "../login/login";
 import { SignUpPage } from "../signup/signup";
+import { TabsPage } from "../tabs/tabs";
 
 @Component({
   selector: 'page-home',
@@ -12,8 +13,15 @@ import { SignUpPage } from "../signup/signup";
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, private storage: Storage) {
+  private authToken:string;
 
+  constructor(public navCtrl: NavController, private storage: Storage) {
+    // Or to get a key/value pair
+    storage.get('authToken').then((val) => {
+      if ( val != undefined || val != null ) {
+        this.navCtrl.push(TabsPage);
+      }
+    });
   }
 
   goToLogin(){

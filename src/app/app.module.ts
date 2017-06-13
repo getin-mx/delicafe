@@ -22,6 +22,7 @@ import { PromotionDetailsPage } from "../pages/promotion-details/promotion-detai
 import { ProfileDetailsPage } from "../pages/profile-details/profile-details";
 //Services, providers and configuration files
 import { cloudSettings } from "../config/cloudSettings.config";
+import { storage } from "../config/storage.config";
 import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
 import { SafePipe } from '../pipes/safe/safe';
 
@@ -45,7 +46,7 @@ import { SafePipe } from '../pipes/safe/safe';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
-    IonicStorageModule.forRoot(),
+    IonicStorageModule.forRoot( storage ),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAFfe5_ZgKIGVbWRuokOwCMtKmeOVwm4ok'
     })

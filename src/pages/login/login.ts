@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, IonicPage, Loading, LoadingController, AlertController } from 'ionic-angular';
 
 import { Auth, User, FacebookAuth } from '@ionic/cloud-angular';
+import { Storage } from '@ionic/storage';
 
 import { SignUpPage } from "../signup/signup";
 import { TabsPage } from "../tabs/tabs";
@@ -17,7 +18,7 @@ export class LoginPage {
   loading: Loading;
 
   constructor(private nav: NavController, public auth: Auth, public user: User, private alertCtrl: AlertController,
-     private loadingCtrl: LoadingController, private facebookAuth: FacebookAuth) {
+     private loadingCtrl: LoadingController, private facebookAuth: FacebookAuth, private storage: Storage) {
 
     this.credentials = {"email": "", "password": ""};
 
@@ -26,7 +27,12 @@ export class LoginPage {
   login() {
     this.showLoading();
     this.auth.login('basic', this.credentials).then(() => {
-        this.nav.setRoot(TabsPage);
+      let authToken = this.auth.getToken();
+      // set a key/value
+      this.storage.set('authToken', authToken);
+      this.storage.set('email', this.credentials.email);
+      this.storage.set('password', this.credentials.password);
+      this.nav.setRoot(TabsPage);
       }, (err) => {
         this.showError(err);
       });

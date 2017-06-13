@@ -47,10 +47,4 @@ export class PromosPage {
     );
   }
 
-  onInput( event:any ){
-
-    console.log(event.target.value);
-
-  }
-
 }
