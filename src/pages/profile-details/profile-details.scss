@@ -1,3 +1,14 @@
 page-profile-details {
 
+  .contenido {
+    background: color($colors, regBtn);
+  }
+
+  .roundImage {
+    margin-top: 10%;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: 1.5px solid white;
+  }
 }

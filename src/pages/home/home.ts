@@ -13,8 +13,6 @@ import { TabsPage } from "../tabs/tabs";
 })
 export class HomePage {
 
-  private authToken:string;
-
   constructor(public navCtrl: NavController, private storage: Storage) {
     // Or to get a key/value pair
     storage.get('authToken').then((val) => {

@@ -8,6 +8,8 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { Geolocation } from '@ionic-native/geolocation';
 import { CloudModule } from '@ionic/cloud-angular';
 import { IonicStorageModule } from '@ionic/storage';
+import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
 //pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -68,6 +70,8 @@ import { SafePipe } from '../pipes/safe/safe';
   providers: [
     StatusBar,
     SplashScreen,
+    Camera,
+    ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Geolocation,
   ]

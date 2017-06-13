@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, ModalController } from 'ionic-angular';
+
+import { Storage } from '@ionic/storage';
 
 import { ProfileInfoInteface } from "../../interfaces/profile-info/profile-info.interface";
 import { ProfileDetailsPage } from "../profile-details/profile-details";
@@ -11,23 +13,40 @@ import { ProfileDetailsPage } from "../profile-details/profile-details";
 })
 export class ProfilePage {
 
-  user:any = {
-    name: "Luis Alberto Cruz",
-    email: "luis@getin.mx",
-    birthday: null,
-    gender: "male",
-    userImge: "https://scontent.fmex3-1.fna.fbcdn.net/v/t1.0-9/10523165_885674794776493_9170860125998167431_n.jpg?oh=b7ac6a00f62dab1cf1e6488598f82ebd&oe=59A4532C",
-    address: "Agustin Iturbide",
-    discounts: 0,
-    visits: 0,
+  user:ProfileInfoInteface = {
+      name: "Luis Alberto Cruz",
+      email: "luis@getin.mx",
+      birthday: null,
+      gender: "male",
+      userImge: "https://scontent.fmex3-1.fna.fbcdn.net/v/t1.0-9/10523165_885674794776493_9170860125998167431_n.jpg?oh=b7ac6a00f62dab1cf1e6488598f82ebd&oe=59A4532C",
+      address: "Agustin Iturbide",
+      discounts: 0,
+      visits: 0,
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public modalCtrl: ModalController, private storage: Storage) {
+    // Or to get a key/value pair
+    storage.get('email').then((val) => {
+      if ( val != undefined || val != null ) {
+        this.user.email = val;
+      }
+    });
 
+    storage.get('name').then((val) => {
+      if ( val != undefined || val != null ) {
+        this.user.name = val;
+      }
+    });
   }
 
   goToProfileDetails() {
-    this.navCtrl.push( ProfileDetailsPage );
+    let modal = this.modalCtrl.create(
+      ProfileDetailsPage ,
+      {
+        user: this.user,
+      }
+    );
+    modal.present();
   }
 
 }
