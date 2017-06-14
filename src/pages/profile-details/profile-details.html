@@ -11,29 +11,39 @@
     </ion-buttons>
     <img [src]="user.userImge" class="roundImage"><br>
     <ion-buttons>
-      <button ion-button clear color="light" (click)="showCamera()">Tomar foto</button>
-      <button ion-button clear color="light" (click)="selectImage()">Seleccionar foto</button>
+      <button ion-button clear color="goToBtn" (click)="showCamera()">Tomar foto</button>
+      <button ion-button clear color="goToBtn" (click)="selectImage()">Seleccionar foto</button>
     </ion-buttons>
   </div>
 
   <div class="promotions">
-    <ion-grid color="promos">
-      <ion-row color="promos" text-center>
-        <ion-col color="promos" text-center>
-          <div class="infoRound">
-            <br>
-            {{user.visits}}
-          </div>
-          <br>
-          <span class="infoName">VISITAS</span>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="imgIcon">
+          <img src="assets/img/perfil/name.png" alt="">
         </ion-col>
-        <ion-col color="promos" text-center>
-          <div class="infoRound">
-            <br>
-            {{user.discounts}}
-          </div>
-          <br>
-          <span class="infoName">DESCUENTOS</span>
+        <ion-col>
+          <ion-item class="inpTxt" text-center>
+            <ion-input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="user.name" required class="item item-trns inptText"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="imgIcon">
+          <img src="assets/img/perfil/email.png" alt="">
+        </ion-col>
+        <ion-col>
+          <ion-item class="inpTxt" text-center>
+            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required class="item item-trns inptText"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="imgIcon">
+          <img src="assets/img/perfil/birthday.png" alt="">
+        </ion-col>
+        <ion-col>
+          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="user.birthday"></ion-datetime>
         </ion-col>
       </ion-row>
     </ion-grid>
