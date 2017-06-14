@@ -55,4 +55,8 @@ export class ProfileDetailsPage {
     this.storage.set('userImge', this.user.userImge);
   }
 
+  cancel(){
+    this.viewCtrl.dismiss();
+  }
+
 }
