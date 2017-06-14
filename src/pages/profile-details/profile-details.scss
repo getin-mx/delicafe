@@ -39,4 +39,8 @@ page-profile-details {
   .closeSesion {
     color: color($colors, goToBtn);
   }
+
+  .showInfo {
+    background: color($colors, light) !important;
+  }
 }

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavParams, ViewController, ToastController } from 'ionic-angular';
+import { IonicPage, NavParams, ViewController, ToastController, NavController, AlertController } from 'ionic-angular';
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { Storage } from '@ionic/storage';
+import { User } from '@ionic/cloud-angular';
 
 import { ProfileInfoInteface } from "../../interfaces/profile-info/profile-info.interface";
+import { HomePage } from "../home/home";
 
 @IonicPage()
 @Component({
@@ -16,12 +18,21 @@ export class ProfileDetailsPage {
 
   user:ProfileInfoInteface;
   originalUser:ProfileInfoInteface;
+  showUserInfo:boolean = true;
+  showChangePassword:boolean = false;
+  showPrivacy:boolean = false;
+  showConditions:boolean = false;
 
-  constructor(public navParams: NavParams, private viewCtrl:ViewController, private camera:Camera,
-    private toastCtrl:ToastController, private imagePicker:ImagePicker, private storage: Storage) {
+  originalPassword:string;
+  newPassword:string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl:ViewController, private camera:Camera,
+    private toastCtrl:ToastController, private imagePicker:ImagePicker, private storage: Storage, private alertCtrl:AlertController, public usuario: User) {
 
     this.user = navParams.get('user');
     this.originalUser = this.user;
+
+    this.originalPassword = this.user.password;
 
   }
 
@@ -85,6 +96,50 @@ export class ProfileDetailsPage {
   cancel(){
     this.user = this.originalUser;
     this.viewCtrl.dismiss();
+  }
+
+  userInfo() {
+    this.showUserInfo = !this.showUserInfo;
+    this.showPrivacy = false;
+    this.showConditions = false;
+    this.showChangePassword = false;
+  }
+
+  showChangePasswordF(){
+    this.showUserInfo = false;
+    this.showPrivacy = false;
+    this.showConditions = false;
+    this.showChangePassword = !this.showChangePassword;
+  }
+
+  changePassword() {
+    if (this.originalPassword == this.user.password){
+      this.usuario.details.password = this.newPassword;
+      this.usuario.save();
+      this.showToast("Contraseña actualizada");
+    }else {
+      this.showToast("No coincide la contraseña original");
+    }
+  }
+
+  goToPrivacy() {
+    this.showUserInfo = false;
+    this.showPrivacy = !this.showPrivacy;
+    this.showConditions = false;
+    this.showChangePassword = false;
+  }
+
+  goToConditions() {
+    this.showUserInfo = false;
+    this.showPrivacy = false;
+    this.showConditions = !this.showConditions;
+    this.showChangePassword = false;
+  }
+
+  closeSesion() {
+    this.storage.clear();
+    this.navCtrl.pop();
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

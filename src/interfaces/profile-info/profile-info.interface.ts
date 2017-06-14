@@ -1,6 +1,7 @@
 export interface ProfileInfoInteface {
   name:string,
   email:string,
+  password:string,
   birthday:Date,
   gender:string,
   userImge:string,

@@ -16,6 +16,7 @@ export class ProfilePage {
   user:ProfileInfoInteface = {
       name: "Luis Alberto Cruz",
       email: "luis@getin.mx",
+      password: "",
       birthday: null,
       gender: "male",
       userImge: "https://scontent.fmex3-1.fna.fbcdn.net/v/t1.0-9/10523165_885674794776493_9170860125998167431_n.jpg?oh=b7ac6a00f62dab1cf1e6488598f82ebd&oe=59A4532C",
@@ -45,6 +46,11 @@ export class ProfilePage {
     storage.get('birthday').then((val) => {
       if ( val != undefined || val != null ) {
         this.user.birthday = val;
+      }
+    });
+    storage.get('password').then((val) => {
+      if ( val != undefined || val != null ) {
+        this.user.password = val;
       }
     });
   }

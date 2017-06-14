@@ -17,63 +17,101 @@
   </div>
 
   <div class="promotions">
-    <ion-grid>
-      <ion-row>
-        <ion-col class="imgIcon">
-          <img src="assets/img/perfil/name.png" alt="">
-        </ion-col>
-        <ion-col>
-          <ion-item class="inpTxt" text-center>
-            <ion-input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="user.name" required class="item item-trns inptText"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="imgIcon">
-          <img src="assets/img/perfil/email.png" alt="">
-        </ion-col>
-        <ion-col>
-          <ion-item class="inpTxt" text-center>
-            <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required class="item item-trns inptText"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="imgIcon">
-          <img src="assets/img/perfil/birthday.png" alt="">
-        </ion-col>
-        <ion-col>
-          <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="user.birthday"></ion-datetime>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="imgIcon">
-          <ion-icon name="transgender" color="insti" class="iconGender"></ion-icon>
-        </ion-col>
-        <ion-col>
-          <form method="post">
-              <input type="radio" name="animal" value="Cat" />F
-              <input type="radio" name="animal" value="Dog" />M
-          </form>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+    <ion-list>
+      <button ion-item class="clrFooter" (click)="userInfo()">
+          User Info
+      </button>
+      <ion-grid *ngIf="showUserInfo" class="showInfo">
+        <ion-row>
+          <ion-col class="imgIcon">
+            <img src="assets/img/perfil/name.png" alt="">
+          </ion-col>
+          <ion-col>
+            <ion-item class="inpTxt" text-center>
+              <ion-input type="text" placeholder="Nombre" name="nombre" [(ngModel)]="user.name" required class="item item-trns inptText"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="imgIcon">
+            <img src="assets/img/perfil/email.png" alt="">
+          </ion-col>
+          <ion-col>
+            <ion-item class="inpTxt" text-center>
+              <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="user.email" required class="item item-trns inptText"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="imgIcon">
+            <img src="assets/img/perfil/birthday.png" alt="">
+          </ion-col>
+          <ion-col>
+            <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="user.birthday"></ion-datetime>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="imgIcon">
+            <ion-icon name="transgender" color="insti" class="iconGender"></ion-icon>
+          </ion-col>
+          <ion-col>
+            <form method="post">
+                <input type="radio" name="animal" value="Cat" />F
+                <input type="radio" name="animal" value="Dog" />M
+            </form>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <button ion-item (click)="showChangePasswordF()" class="clrFooter">
+        Cambiar contrasena
+      </button>
+      <ion-grid *ngIf="showChangePassword" class="showInfo">
+        <ion-row>
+          <ion-col text-left>
+            Contraseña
+          </ion-col>
+          <ion-col>
+            <ion-item class="inpTxt" text-center>
+              <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="user.password" class="item item-trns inptText"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col text-left>
+            Nueva contraseña
+          </ion-col>
+          <ion-col>
+            <ion-item class="inpTxt" text-center>
+              <ion-input type="password" placeholder="Contraseña" name="password" [(ngModel)]="newPassword" class="item item-trns inptText"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <button ion-button round color="goToBtn" (click)="changePassword()">Cambiar</button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <button ion-item (click)="goToPrivacy()" class="clrFooter">
+        Politicas de privacidad
+      </button>
+      <ion-item *ngIf="showPrivacy" class="showInfo" text-wrap>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </ion-item>
+      <button ion-item (click)="goToConditions()" class="clrFooter">
+        Condiciones
+      </button>
+      <ion-item *ngIf="showConditions" class="showInfo" text-wrap>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </ion-item>
+      <button ion-item (click)="closeSesion()" class="clrFooter closeSesion">
+        Cerrar sesion
+      </button>
+    </ion-list>
   </div>
 
   <div class="footer">
     <ion-list>
-      <ion-item (click)="changePassword()" class="clrFooter">
-        Cambiar contrasena
-      </ion-item>
-      <ion-item (click)="goToPrivacy()" class="clrFooter">
-        Politicas de privacidad
-      </ion-item>
-      <ion-item (click)="goToConditions()" class="clrFooter">
-        Condiciones
-      </ion-item>
-      <ion-item (click)="closeSesion()" class="clrFooter closeSesion">
-        Cerrar sesion
-      </ion-item>
     </ion-list>
   </div>
 
