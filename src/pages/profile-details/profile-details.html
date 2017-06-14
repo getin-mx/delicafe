@@ -46,7 +46,35 @@
           <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="user.birthday"></ion-datetime>
         </ion-col>
       </ion-row>
+      <ion-row>
+        <ion-col class="imgIcon">
+          <ion-icon name="transgender" color="insti" class="iconGender"></ion-icon>
+        </ion-col>
+        <ion-col>
+          <form method="post">
+              <input type="radio" name="animal" value="Cat" />F
+              <input type="radio" name="animal" value="Dog" />M
+          </form>
+        </ion-col>
+      </ion-row>
     </ion-grid>
+  </div>
+
+  <div class="footer">
+    <ion-list>
+      <ion-item (click)="changePassword()" class="clrFooter">
+        Cambiar contrasena
+      </ion-item>
+      <ion-item (click)="goToPrivacy()" class="clrFooter">
+        Politicas de privacidad
+      </ion-item>
+      <ion-item (click)="goToConditions()" class="clrFooter">
+        Condiciones
+      </ion-item>
+      <ion-item (click)="closeSesion()" class="clrFooter closeSesion">
+        Cerrar sesion
+      </ion-item>
+    </ion-list>
   </div>
 
 </ion-content>

@@ -25,4 +25,18 @@ page-profile-details {
     width: 100%;
     margin-left: -30%;
   }
+
+  .iconGender {
+    margin-left: -15%;
+    font-size: 2.4em;
+    font-weight: bold;
+  }
+
+  .clrFooter{
+    background: color($colors, headProfile)
+  }
+
+  .closeSesion {
+    color: color($colors, goToBtn);
+  }
 }
