@@ -53,6 +53,8 @@ export class ProfilePage {
         this.user.password = val;
       }
     });
+
+    console.log(this.user);
   }
 
   goToProfileDetails() {

@@ -32,6 +32,8 @@ export class LoginPage {
       this.storage.set('authToken', authToken);
       this.storage.set('email', this.credentials.email);
       this.storage.set('password', this.credentials.password);
+      this.storage.set('name', this.user.details.name);
+      this.storage.set('userImge', this.user.details.image);
       this.nav.setRoot(TabsPage);
       }, (err) => {
         this.showError(err);

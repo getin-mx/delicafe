@@ -4,7 +4,7 @@ import { IonicPage, NavParams, ViewController, ToastController, NavController, A
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { Storage } from '@ionic/storage';
-import { User } from '@ionic/cloud-angular';
+import { User, Auth } from '@ionic/cloud-angular';
 
 import { ProfileInfoInteface } from "../../interfaces/profile-info/profile-info.interface";
 import { HomePage } from "../home/home";
@@ -26,7 +26,7 @@ export class ProfileDetailsPage {
   originalPassword:string;
   newPassword:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl:ViewController, private camera:Camera,
+  constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl:ViewController, private camera:Camera, private auth:Auth,
     private toastCtrl:ToastController, private imagePicker:ImagePicker, private storage: Storage, private alertCtrl:AlertController, public usuario: User) {
 
     this.user = navParams.get('user');
@@ -89,7 +89,11 @@ export class ProfileDetailsPage {
     this.storage.set('name', this.user.name);
     this.storage.set('email', this.user.email);
     this.storage.set('birthday', this.user.birthday);
+    this.usuario.details.image = this.user.userImge;
+    this.usuario.details.name = this.user.name;
+    this.usuario.details.email = this.user.email;
     this.originalUser = this.user;
+    this.usuario.save();
     this.viewCtrl.dismiss();
   }
 
@@ -138,7 +142,7 @@ export class ProfileDetailsPage {
 
   closeSesion() {
     this.storage.clear();
-    this.navCtrl.pop();
+    this.auth.logout();
     this.navCtrl.setRoot(HomePage);
   }
 

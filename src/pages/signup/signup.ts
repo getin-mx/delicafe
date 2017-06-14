@@ -34,6 +34,7 @@ export class SignUpPage {
       this.storage.set('email', this.credentials.email);
       this.storage.set('password', this.credentials.password);
       this.storage.set('name', this.credentials.name);
+      this.storage.set('userImge', this.user.details.image);
       this.nav.setRoot( TabsPage );
     }, (err) => {
       this.showError(err);
