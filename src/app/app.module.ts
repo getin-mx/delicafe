@@ -26,8 +26,6 @@ import { IonicImageViewerModule } from 'ionic-img-viewer';
 //Services, providers and configuration files
 import { cloudSettings } from "../config/cloudSettings.config";
 import { storage } from "../config/storage.config";
-import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
-import { SafePipe } from '../pipes/safe/safe';
 
 @NgModule({
   declarations: [
@@ -40,10 +38,8 @@ import { SafePipe } from '../pipes/safe/safe';
     SignUpPage,
     SocialPage,
     TabsPage,
-    PlaceholderPipe,
     PromotionDetailsPage,
     ProfileDetailsPage,
-    SafePipe
   ],
   imports: [
     BrowserModule,

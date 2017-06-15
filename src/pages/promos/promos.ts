@@ -22,7 +22,7 @@ export class PromosPage {
 
     for(var i = 0; i < this.branchOffices.length; i++){
 
-      this.branchOfficesSani.push(this._sanitizer.bypassSecurityTrustStyle(this.branchOffices[i].uriImage));
+      this.branchOfficesSani.push(this._sanitizer.bypassSecurityTrustStyle('url(' + this.branchOffices[i].uriImage + ')'));
     }
 
   }
