@@ -45,6 +45,10 @@ export class BranchOfficePage {
     }
   }// end showMapDetails()
 
+  closeMarkerDetails() {
+    this.showInfo = !this.showInfo;
+  }
+
   showMap(){
       let destination = this.branchSelected.lat + ',' + this.branchSelected.lng;
 

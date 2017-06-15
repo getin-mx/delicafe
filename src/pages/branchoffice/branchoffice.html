@@ -6,6 +6,7 @@
       [label]="M"
       [title]="coordinate.name"
       (markerClick)="showMapDetails(i)"
+      (mouseOut)="closeMarkerDetails()"
       [iconUrl]="coordinate.icon" *ngFor="let coordinate of coordinates; let i = index" >
     </sebm-google-map-marker>
   </sebm-google-map>
