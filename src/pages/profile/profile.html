@@ -1,6 +1,11 @@
 <ion-content text-center>
   <div class="contenido" color="promos">
-    <img src="{{user.userImge}}" class="roundImage" (click)="goToProfileDetails()"><br>
+    <ion-buttons text-right>
+      <button ion-button clear color="light" large (click)="goToProfileDetails()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+    <img src="{{user.userImge}}" class="roundImage"><br>
     <span class="userName">{{user.name}}</span><br>
     <span class="userEmail">{{user.email}}</span>
   </div>
