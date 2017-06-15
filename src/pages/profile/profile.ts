@@ -14,12 +14,12 @@ import { ProfileDetailsPage } from "../profile-details/profile-details";
 export class ProfilePage {
 
   user:ProfileInfoInteface = {
-      name: "Luis Alberto Cruz",
-      email: "luis@getin.mx",
+      name: "",
+      email: "",
       password: "",
       birthday: null,
       gender: "male",
-      userImge: "https://scontent.fmex3-1.fna.fbcdn.net/v/t1.0-9/10523165_885674794776493_9170860125998167431_n.jpg?oh=b7ac6a00f62dab1cf1e6488598f82ebd&oe=59A4532C",
+      userImge: "",
       address: "Agustin Iturbide",
       discounts: 0,
       visits: 0,
