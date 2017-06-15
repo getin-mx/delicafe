@@ -22,6 +22,7 @@ import { SocialPage } from '../pages/social/social';
 import { TabsPage } from "../pages/tabs/tabs";
 import { PromotionDetailsPage } from "../pages/promotion-details/promotion-details";
 import { ProfileDetailsPage } from "../pages/profile-details/profile-details";
+import { IonicImageViewerModule } from 'ionic-img-viewer';
 //Services, providers and configuration files
 import { cloudSettings } from "../config/cloudSettings.config";
 import { storage } from "../config/storage.config";
@@ -49,6 +50,7 @@ import { SafePipe } from '../pipes/safe/safe';
     IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings),
     IonicStorageModule.forRoot( storage ),
+    IonicImageViewerModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAFfe5_ZgKIGVbWRuokOwCMtKmeOVwm4ok'
     })
