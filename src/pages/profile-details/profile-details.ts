@@ -32,8 +32,6 @@ export class ProfileDetailsPage {
     this.user = navParams.get('user');
     this.originalUser = this.user;
 
-    this.originalPassword = this.user.password;
-
   }
 
   showCamera(){
@@ -120,6 +118,8 @@ export class ProfileDetailsPage {
     if (this.originalPassword == this.user.password){
       this.usuario.details.password = this.newPassword;
       this.usuario.save();
+      this.user.password = this.newPassword;
+      this.newPassword = null;
       this.showToast("Contraseña actualizada");
     }else {
       this.showToast("No coincide la contraseña original");
