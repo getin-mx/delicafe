@@ -17,7 +17,7 @@ export class HomePage {
     // Or to get a key/value pair
     storage.get('authToken').then((val) => {
       if ( val != undefined || val != null ) {
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.setRoot( TabsPage );
       }
     });
   }
