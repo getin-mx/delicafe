@@ -7,4 +7,5 @@ export interface BranchOfficeInfo{
   address:string,
   promotions:string,
   uriMap:string,
+  telefono:string,
 }
