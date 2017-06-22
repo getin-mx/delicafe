@@ -71,8 +71,8 @@
             },
             "cordova-sqlite-storage": {},
             "cordova-plugin-camera": {
-                "CAMERA_USAGE_DESCRIPTION": " ",
-                "PHOTOLIBRARY_USAGE_DESCRIPTION": " "
+                "CAMERA_USAGE_DESCRIPTION": "Take profile picture",
+                "PHOTOLIBRARY_USAGE_DESCRIPTION": "Choice profile picture"
             },
             "com.synconset.imagepicker": {}
         },
