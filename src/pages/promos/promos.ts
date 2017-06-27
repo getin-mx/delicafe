@@ -31,7 +31,7 @@ export class PromosPage {
     let destination = this.branchOffices[idxOffice].lat + ',' + this.branchOffices[idxOffice].lng;
 
     if(this.platform.is('ios')){
-	    window.open('maps://?q=' + destination, '_system');
+      window.open('http://maps.apple.com/?q='+this.branchOffices[idxOffice].name+'&sll='+destination+'&z=10&t=m');
     } else {
 	     let label = encodeURI('My Label');
 	      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
