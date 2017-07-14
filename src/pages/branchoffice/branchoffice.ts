@@ -51,11 +51,10 @@ export class BranchOfficePage {
 
   showMap(){
       let destination = this.branchSelected.lat + ',' + this.branchSelected.lng;
-
+      let label = encodeURI(this.branchSelected.name);
       if(this.platform.is('ios')){
-  	    window.open('http://maps.apple.com/?q='+this.branchSelected.name+'&sll='+destination+'&z=10&t=m');
+  	    window.open('http://maps.apple.com/?q='+label+'&sll='+destination+'&z=10&t=m');
       } else {
-  	     let label = encodeURI(this.branchSelected.name);
   	      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
       }
   }
