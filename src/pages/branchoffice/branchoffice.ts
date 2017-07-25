@@ -53,7 +53,7 @@ export class BranchOfficePage {
       let destination = this.branchSelected.lat + ',' + this.branchSelected.lng;
       let label = encodeURI(this.branchSelected.name);
       if(this.platform.is('ios')){
-  	    window.open('http://maps.apple.com/?q='+label+'&sll='+destination+'&z=10&t=m');
+        window.open('http://maps.apple.com/?q=' + label + '&saddr=' + destination + '&daddr=' + destination, '_system');
       } else {
   	      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
       }

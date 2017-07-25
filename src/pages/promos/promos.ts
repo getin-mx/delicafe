@@ -29,9 +29,9 @@ export class PromosPage {
 
   showMap( idxOffice:number ){
     let destination = this.branchOffices[idxOffice].lat + ',' + this.branchOffices[idxOffice].lng;
-
+    let label = encodeURI(this.branchOffices[idxOffice].name);
     if(this.platform.is('ios')){
-      window.open('http://maps.apple.com/?q='+this.branchOffices[idxOffice].name+'&sll='+destination+'&z=10&t=m');
+      window.open('http://maps.apple.com/?q=' + label + '&saddr=' + destination + '&daddr=' + destination, '_system');
     } else {
 	     let label = encodeURI('My Label');
 	      window.open('geo:0,0?q=' + destination + '(' + label + ')', '_system');
