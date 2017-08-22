@@ -12,7 +12,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap:null,
     telefono: null
   },{
-    name:  "Deli Café Constituyentes #2",
+    name:  "deli café Constituyentes #2",
     lat: 19.395210,
     lng: -99.230566,
     icon: "assets/icon/cafeLoc.png",
@@ -22,7 +22,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap: "http://maps.google.com?q=19.395187,-99.230567",
     telefono: null
   }, {
-    name:  "Deli Café ITAM",
+    name:  "deli café ITAM",
     lat: 19.344184,
     lng: -99.200411,
     icon: "assets/icon/cafeLoc.png",
@@ -32,7 +32,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap: "http://maps.google.com?q=Río+Hondo+3,+Progreso,+01080+Ciudad+de+México,+CDMX/",
     telefono: "7045 7743"
   }, {
-    name:  "Deli Café Gruta",
+    name:  "deli café Gruta",
     lat: 19.325825,
     lng: -99.200122,
     icon: "assets/icon/cafeLoc.png",
@@ -42,7 +42,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap: "http://maps.google.com?q=Ruta+19,+Jardines+del+Pedregal,+01900+Ciudad+de+México,+CDMX/",
     telefono: null
   }, {
-    name:  "Deli Café Piaget",
+    name:  "deli café Piaget",
     lat: 19.325139,
     lng: -99.222851,
     icon: "assets/icon/cafeLoc.png",
@@ -52,7 +52,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap: "http://maps.google.com?q=Av.+San+Jerónimo+1118,+San+Jerónimo+Lídice,+10200+Ciudad+de+México,+CDMX/",
     telefono: null
   }, {
-    name:  "Deli Café Dos Vistas",
+    name:  "deli café Dos Vistas",
     lat: 19.365449,
     lng: -99.252263,
     icon: "assets/icon/cafeLoc.png",
@@ -62,7 +62,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap: "http://maps.google.com?q=Av+Bernardo+Quintana+400,+Santa+Fe,+Zedec+Sta+Fé,+01219+Ciudad+de+México,+CDMX/",
     telefono: "2591 5637"
   }, {
-    name:  "Deli Café Corp. Chedraui",
+    name:  "deli café Corp. Chedraui",
     lat: 19.394032,
     lng: -99.236941,
     icon: "assets/icon/cafeLoc.png",
@@ -72,7 +72,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap: "http://maps.google.com?q=Av+Constituyentes+1150,+Lomas+Altas,+11950+Ciudad+de+México,+CDMX/",
     telefono: "6273 1666"
   }, {
-    name:  "Deli Café Colegio Francés",
+    name:  "deli café Colegio Francés",
     lat: 19.313453,
     lng: -99.208188,
     icon: "assets/icon/cafeLoc.png",
@@ -82,7 +82,7 @@ export const dataCoordinates:BranchOfficeInfo[] = [
     uriMap: "http://maps.google.com?q=Colegio+330,+Jardines+del+Pedregal,+01900+Ciudad+de+México,+CDMX/",
     telefono: "5135 4063"
   }, {
-    name:  "Deli Café Boehringer",
+    name:  "deli café Boehringer",
     lat: 19.355284,
     lng: -99.115136,
     icon: "assets/icon/cafeLoc.png",
